@@ -1,0 +1,713 @@
+/* aside */
+.aside{
+    height: auto;
+    width: 12vw;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 80px;
+    left: 10vw;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.aside a{
+    display: flex;
+    padding: 10px 20px;
+    position:relative;
+}
+.aside a i{
+    display: block;
+    height: 26px;
+    width: 26px;
+    margin-right: 5px;
+    font-size: 16px;
+    line-height: 26px;
+}
+.aside a.active i{
+    color: rgb(116, 116, 240);
+}
+.aside a.active::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    width: 2px;
+    height: 50%;
+    background-color: rgb(116, 116, 240);
+}
+.aside a.active i,
+.aside a span{
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    font-size: 16px;
+}
+/* ************************************************************************ */
+.main-content{
+    width: 66vw;
+    margin-left: auto;
+    height: auto;
+}
+.main-content>div{
+    display: block;
+    min-height: 400px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+/* user-info */
+
+.main-content .user-info{
+    height: auto;
+    width: 100%;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+}
+.main-content .user-info>div:nth-of-type(1){
+    height: 60px;
+    border-bottom: solid 1px silver;
+}
+.main-content .user-info>div:nth-of-type(1) h2{
+    line-height: 60px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.main-content .user-info>div:nth-of-type(2){
+    height: auto;
+    padding: 20px 0px;
+    display: flex;
+    width: 100%;
+}
+.main-content .user-info>div:nth-of-type(2) .left{
+    display: flex;
+    width: 50%;
+    
+}
+.main-content .user-info>div:nth-of-type(2) .left img{
+    width: 64px;
+    height: 64px;
+    margin: 0px 20px;
+    border-radius: 50%;
+}
+.main-content .user-info>div:nth-of-type(2) .left div{
+    width: auto;
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+.main-content .user-info>div:nth-of-type(2) .left div em{
+    padding: 4px 8px;
+    margin: 0px 10px;
+    font-style: normal;
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: #eee;
+}
+.main-content .user-info>div:nth-of-type(2) .right{
+    width: 50%;
+    height: 100%;
+}
+.main-content .user-info>div:nth-of-type(2) .right ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-content .user-info>div:nth-of-type(2) .right ul li{
+    padding: 0px 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.main-content .user-info>div:nth-of-type(2) .right ul li span{
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 22px;
+    text-align: center;
+}
+.main-content .user-info>div:nth-of-type(2) .right ul li small{
+    display: block;
+}
+/* 作品管理 */
+
+.main-content .nov-mang{
+    width: 100%;
+    height: auto;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.main-content .nov-mang>div:nth-of-type(1){
+    border-bottom: solid 1px silver;
+}
+.main-content .nov-mang>div:nth-of-type(1) h2{
+    line-height: 60px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.main-content .nov-mang div:nth-of-type(2){
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main-content .nov-mang div:nth-of-type(2) span{
+    color: gray;
+    margin: 10px 0px;
+}
+.main-content .nov-mang div:nth-of-type(2) a{
+    padding: 10px 30px;
+    border-radius: 5px;
+    background-color: rgb(83, 83, 228);
+}
+/* 推荐观点 */
+
+/* 导航 */
+.viewpoint{
+    background-color: #fff;
+    padding: 0px 20px;
+}
+.viewpoint>div:nth-of-type(1){
+    border-bottom: solid 1px silver;
+}
+.viewpoint>div:nth-of-type(1) h2{
+    line-height: 60px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 500;
+}
+/* 观点列表 */
+
+.viewpoint .view-list{
+    height: 100%;
+}
+.viewpoint .view-list ul{
+    display: block;
+}
+.viewpoint .view-list>ul>li{
+    height: 100%;
+    
+}
+.viewpoint .view-list ul li .view-item{
+    display: flex;
+    border-top: solid 1px silver;
+    padding: 20px 0px;
+}
+.viewpoint .view-list ul>li:nth-child(1) .view-item{
+    border:none;
+}
+.viewpoint .view-list ul li .view-item a{
+    display: block;
+}
+.viewpoint .view-list ul li .view-item a>img{
+    height: 48px;
+    width: 48px;
+    margin: 0px 20px 0px 10px;
+    border-radius: 50%;
+}
+.viewpoint .view-list ul li .view-item .info{
+    width: 100%;
+}
+.viewpoint .view-list ul li .view-item .info h4{
+    height: 30px;
+}
+.viewpoint .view-list >ul li .view-item .info>div p{
+    margin: 10px 0px;
+    line-height: 24px;
+}
+.viewpoint .view-list >ul li .view-item .info>div p span{
+    color: blue;
+}
+.viewpoint .view-list ul li .view-item .info>div img{
+    width: 120px;
+    height: 160px;
+    margin: 10px 0px;
+}
+.viewpoint .view-list ul li .view-item .info>a{
+    border-left: solid 1px silver;
+}
+.viewpoint .view-list ul li .view-item .info>a span{
+    color: rgb(77, 77, 184);
+}
+.viewpoint .view-list ul li .view-item .info .info-tools{
+    display: flex;
+    
+}
+.viewpoint .view-list ul li .view-item .info .info-tools li{
+    height: 50px;
+    display: inline-block;
+    line-height: 50px;
+    color: grey;
+}
+
+/* 作者信息 */
+.main-content #userInfo{
+    padding: 0px 20px;
+    height: auto;
+}
+.main-content #userInfo>div{
+    height: 60px;
+    border-bottom: solid 1px #eee;
+    display: flex;
+    align-items: center;
+}
+.main-content #userInfo>div h3{
+    display: block;
+    font-size: 18px;
+}
+.main-content #userInfo form{
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: 0px auto;
+    padding: 30px 0px;
+}
+.main-content #userInfo form>div:nth-of-type(1){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+}
+.main-content #userInfo form>div:nth-of-type(1) label{
+    width: 100px;
+}
+.main-content #userInfo form>div .userImgUpload{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.main-content #userInfo form .userImgUpload>div{
+    width: 100px;
+}
+.main-content #userInfo form .userImgUpload>div:hover .mask{
+    visibility: visible;
+}
+.main-content #userInfo form>div img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.main-content #userInfo form>div .mask{
+    height: 100px;
+    width: 100px;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.1);
+    color: #fff;
+    z-index: 9;
+}
+.main-content #userInfo form>div .mask i{
+    font-size: 24px;
+}
+.main-content #userInfo form>div .msg{
+    width: auto;
+    margin-left: 20px;
+    color: grey;
+    font-size: 14px;
+}
+.main-content #userInfo form ul{
+    display: block;
+}
+.main-content #userInfo form ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+}
+.main-content #userInfo form ul li label{
+    width: 70px;
+}
+.main-content #userInfo form ul li input[type="text"]{
+    height: 30px;
+    width: 70%;
+    padding: 8px;
+    border: solid 1px #eee;
+    border-radius: 5px;
+    outline: none;
+}
+.main-content #userInfo form ul li input[type="text"]:focus{
+    border: solid 1px skyblue;
+    box-shadow: 0px 0px 2px skyblue;
+}
+.main-content #userInfo form ul li input:disabled{
+    border: none;
+    background-color: #fff;
+}
+.main-content #userInfo form ul li div{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 70%;
+}
+.main-content #userInfo form ul li div input[type='radio']{
+    width: 26px;
+    height: 26px;
+    margin: 0px 20px;
+}
+.main-content #userInfo form .tools{
+    height: 80px;
+    width: 70%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.main-content #userInfo form .tools a{
+    display: block;
+    padding: 10px 36px;
+    border-radius: 5px;
+    margin-right: 20px;
+    background-color: skyblue;
+}
+.main-content #userInfo form .tools a.cancel{
+    background-color: #fff;
+    border: solid 1px skyblue;
+    display: none;
+}
+
+/* 作品设置 */
+.main-content #bookInfo{
+    padding: 0px 20px;
+    height: auto;
+}
+.main-content #bookInfo>div{
+    height: 60px;
+    border-bottom: solid 1px #eee;
+    display: flex;
+    align-items: center;
+}
+.main-content #bookInfo>div h3{
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+}
+.main-content #bookInfo>div h3 span{
+    display: inline-block;
+    font-size: 14px;
+}
+.main-content #bookInfo form{
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: 0px auto;
+    padding: 30px 0px;
+}
+.main-content #bookInfo form>div:nth-of-type(1){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    width: 100%;
+}
+.main-content #bookInfo form>div:nth-of-type(1) label{
+    width: 100px;
+}
+.main-content #bookInfo form>div .bookImgUpload{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.main-content #bookInfo form .bookImgUpload>div{
+    width: 100px;
+}
+.main-content #bookInfo form .bookImgUpload>div:hover .mask{
+    visibility: visible;
+}
+.main-content #bookInfo form>div img{
+    height: 150px;
+    width: 100px;
+}
+.main-content #bookInfo form>div .mask{
+    height: 150px;
+    width: 100px;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.1);
+    color: #fff;
+    z-index: 9;
+}
+.main-content #bookInfo form>div .mask i{
+    font-size: 24px;
+}
+.main-content #bookInfo form>div .msg{
+    width: auto;
+    margin-left: 20px;
+    color: grey;
+    font-size: 14px;
+}
+
+.main-content #bookInfo form ul{
+    display: block;
+}
+.main-content #bookInfo form ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+}
+.main-content #bookInfo form ul li:last-child{
+    height: 100px;
+}
+.main-content #bookInfo form ul li label{
+    width: 70px;
+}
+.main-content #bookInfo form ul li input[type="text"]{
+    height: 30px;
+    width: 70%;
+    padding: 8px;
+    border: solid 1px #eee;
+    border-radius: 5px;
+    outline: none;
+}
+.main-content #bookInfo form ul li input[type="text"]:focus{
+    border: solid 1px skyblue;
+    box-shadow: 0px 0px 2px skyblue;
+}
+.main-content #bookInfo form ul li input:disabled{
+    border: none;
+    background-color: #fff;
+}
+.main-content #bookInfo form ul li select{
+    height: 40px;
+    width: 70%;
+    padding: 8px;
+    border: solid 1px #eee;
+    border-radius: 5px;
+    outline: none;
+}
+.main-content #bookInfo form ul li textarea{
+    height: 80%;
+    width: 70%;
+    padding: 8px;
+    border: solid 1px #eee;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(17, 16, 16);
+}
+.main-content #bookInfo form ul li div{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 70%;
+}
+.main-content #bookInfo form ul li div input[type='radio']{
+    width: 26px;
+    height: 26px;
+    margin: 0px 20px;
+}
+.main-content #bookInfo form .tools{
+    height: 80px;
+    width: 70%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.main-content #bookInfo form .tools a{
+    display: block;
+    padding: 10px 36px;
+    border-radius: 5px;
+    margin-right: 20px;
+    background-color: skyblue;
+}
+.main-content #bookInfo form .tools a.cancel{
+    background-color: #fff;
+    border: solid 1px skyblue;
+    display: none;
+}
+
+/* 我的作品 */
+.main-content .my-novel{
+    height: auto;
+    width: 100%;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+}
+.main-content .my-novel>div:nth-of-type(1){
+    height: 60px;
+    border-bottom: solid 1px silver;
+}
+.main-content .my-novel>div:nth-of-type(1) h2{
+    line-height: 60px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.main-content .my-novel>div:nth-of-type(1) span{
+    line-height: 60px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2475d8;
+}
+.main-content .my-novel>ul{
+    list-style: none;
+    height: auto;
+    display: block;
+}
+.main-content .my-novel>ul li{
+    height: auto;
+    display: flex;
+    padding: 10px 0px;
+    border-bottom: solid 1px #eee;
+}
+.main-content .my-novel>ul li:last-child{
+    margin-top: 6px;
+}
+.main-content .my-novel>ul li:last-child{
+    border-bottom: none;
+}
+.main-content .my-novel>ul li img{
+    width: 100px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+.main-content .my-novel>ul li .prod{
+    width: 100%;
+    position: relative;
+}
+.main-content .my-novel>ul li .prod .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+.main-content .my-novel>ul li .prod .title label{
+    text-align: center;
+    background-color: #eee;
+    color: #1dba4f;
+    display: block;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+.main-content .my-novel>ul li .prod .title{
+    margin: 5px 0;
+}
+.main-content .my-novel>ul li .prod .update{
+    color: rgba(21,26,48,.5);
+    margin: 6px 0;
+    font-size: 6px;
+}
+.main-content .my-novel>ul li .prod .subscribe{
+    color: rgba(21,26,48,.5);
+    margin: 6px 0;
+    font-size: 6px;
+}
+.main-content .my-novel>ul li .prod .collect{
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    color: rgba(21,26,48,.5);
+    font-size: 15px;
+}
+.main-content .my-novel>ul li .prod .btn-groups{
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+}
+.main-content .my-novel>ul li .prod .btn-groups a{
+    display: block;
+    padding: 5px 8px;
+    border: solid 1px #eee;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.main-content .my-novel>ul li .prod .btn-groups a:last-child{
+    display: block;
+    padding: 6px 10px;
+    border: solid 1px #eee;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: hsl(213, 85%, 60%);
+    color: #fff;
+}
+
+/* 新建作品 */
+.main-content #addNovel{
+    padding: 0px 20px;
+    height: auto;
+    width: 100%;
+}
+.main-content #addNovel>div{
+    height: 60px;
+    border-bottom: solid 1px #eee;
+    display: flex;
+    align-items: center;
+}
+.main-content #addNovel>div h3{
+    display: block;
+    font-size: 18px;
+}
+.main-content #addNovel form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+.main-content #addNovel form ul {
+    display: flex;
+    flex-direction: column;
+}
+.main-content #addNovel form ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.main-content #addNovel form ul li:last-child{
+    height: 100px;
+}
+.main-content #addNovel form ul li input {
+    height: 30px;
+    width: 200px;
+    outline: none;
+}
+.main-content #addNovel form ul li textarea {
+    height: 100%;
+    width: 200px;
+    outline: none;
+    color: rgb(17, 16, 16);
+    font-size: small;
+    padding: 5px;
+}
+.main-content #addNovel form ul li select {
+    height: 30px;
+    width: 200px;
+    outline: none;
+}
+.main-content #addNovel form .tools{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+.main-content #addNovel form .tools a{
+    display: block;
+    background-color: #0067e5;
+    border: solid 1px #0067e5;
+    padding: 4px 5px;
+    border-radius: 4px;
+    color: #eee;
+}

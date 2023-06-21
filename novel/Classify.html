@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/Style.css"/>
+	</head>
+	<body onload="draw();">
+		<!-- header -->
+		<div id="header" class="w-100 border-bottom border-warning px-5">
+			<div class="row h-50 my-3">
+				<div class="col-3 p-0 d-flex align-items-center justify-content-center">
+					<!-- logo -->
+					<a href="" class="d-block">
+						<canvas id="canvas" width="60" height="60"></canvas>
+					</a>
+				</div>
+				<div class="col-6 p-0 d-flex align-items-center justify-content-center">
+					<div class="p-0">
+						<div class="border rounded clearfix pl-2" style="width: 480px; height: 34px;" style="border: 1px solid #ced4da;">
+							<input type="text" class="border-0 d-inline-block" placeholder="你好!明天" style="width: 440px;height: 32px;">
+							<i class="fa fa-search fa-2x d-inline-block text-light float-right"></i>
+						</div>
+						<div class="">
+							<a href="" class="d-inline-block mr-3">
+								<span><small>龙族3·黑月之潮</small></span>
+							</a>
+							<a href="" class="d-inline-block mr-3">
+								<span><small>雪中悍刀行</small></span>
+							</a>
+							<a href="" class="d-inline-block mr-3">
+								<span><small>斗破苍穹</small></span>
+							</a>
+							<a href="" class="d-inline-block mr-3">
+								<span><small>将夜</small></span>
+							</a>
+							<a href="" class="d-inline-block mr-3">
+								<span><small>斗罗大陆</small></span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 p-0 d-flex align-items-center justify-content-center">
+					<div class="row" style="height: 32px;">
+						<div class="d-inline-block">
+							<span class="">Samuel</span>
+							<i class="fa fa-angle-down p-2" data-toggle="dropdown"></i>
+							<div class="dropdown-menu">
+								<a href="MyMainPage.html" class="dropdown-item">个人主页</a>
+								<a href="" class="dropdown-item">最近阅读</a>
+								<a href="" class="dropdown-item">我的账户</a>
+								<a href="" class="dropdown-item">系统通知</a>
+								<a href="" class="dropdown-item">退出登录</a>
+							</div>
+						</div>
+						<a href="" class="btn-sm bg-warning py-1">
+							<span class="">签到</span>
+						</a>
+						<em class="d-inline-block px-2">|</em>
+						<div href="" class="d-inline-block">
+							<span class="">我的书架</span>
+							<i class="fa fa-angle-down p-2" data-toggle="dropdown"></i>
+							<div class="dropdown-menu">
+								<a href="NovelDetail.html" class="dropdown-item">火之晨曦</a>
+								<a href="" class="dropdown-item">雪中悍刀行</a>
+								<a href="" class="dropdown-item">绝世唐门</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- class -->
+			<div class="row">
+				<div class="col-3" style="z-index: 8;">
+					<div id="types" class="mx-auto" style="width: 240px;">
+						<a href="" class="d-block px-4 border border-info d-flex align-items-center justify-content-between">
+							<i class="fa fa-th p-2"></i>
+							<span class="d-inline-block">热门分类</span>
+							<i class="fa fa-angle-down fa-2x p-2"></i>
+						</a>
+						<div class="mx-auto p-2 text-black-50" style="background-color: #7babbf;">
+							<a href="" class="mx-1 mt-2">现代言情</a>
+							<a href="" class="mx-1 mt-2">玄幻</a>
+							<a href="" class="mx-1 mt-2">都市</a>
+							<a href="" class="mx-1 mt-2">军事</a>
+							<a href="" class="mx-1 mt-2">豪门总裁</a> 
+							<a href="" class="mx-1 mt-2">历史</a>
+							<a href="" class="mx-1 mt-2">游戏</a> 
+							<a href="" class="mx-1 mt-2">科幻</a> 
+							<a href="" class="mx-1 mt-2">古代言情</a> 
+							<a href="" class="mx-1 mt-2">仙侠</a> 
+							<a href="" class="mx-1 mt-2">武侠</a> 
+							<a href="" class="mx-1 mt-2">体育</a> 
+							<a href="" class="mx-1 mt-2">玄幻言情</a> 
+							<a href="" class="mx-1 mt-2">青春</a> 
+							<a href="" class="mx-1 mt-2">二次元</a> 
+							<a href="" class="mx-1 mt-2">科幻空间</a>
+							<a href="" class="mx-1 mt-2">游戏竞技</a> 
+						</div>
+						<div class="mx-auto px-1 clearfix" style="background-color: #7babbf;">
+							<a href="" class="ml-2 mb-2 float-left">现代言情</a> 
+							<a href="Classify.html" class="mr-2 mb-2 float-right">全部分类></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 p-0 d-flex justify-content-center align-items-center" style="height: 50px;">
+					<ul class="nav d-flex" style="font-size: 20px;">
+						<li class="nav-link px-2">
+							<a href="Index.html" class="nav-link">首页</a>
+						</li>
+						<li class="nav-link px-2">
+							<a href="Classify.html" class="nav-link">男生</a>
+						</li>
+						<li class="nav-link px-2">
+							<a href="" class="nav-link">女生</a>
+						</li>
+						<li class="nav-link px-2">
+							<a href="" class="nav-link">包月</a>
+						</li>
+						<li class="nav-link px-2">
+							<a href="" class="nav-link">完本</a>
+						</li>
+						<li class="nav-link px-2">
+							<a href="" class="nav-link">免费</a>
+						</li>
+						<li class="nav-link px-2">
+							<a href="" class="nav-link">排行榜</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-3 p-0"></div>
+			</div>
+		</div>
+		<!-- box-center -->
+		<div class="w-100 bg-light px-5 py-4" style="z-index: 3;">
+			<div class="row">
+				<div class="col-3 px-5">
+					<!-- classify -->
+					<div class="pl-2 py-2" style="background-color: rgba(0,0,0,0.1);">
+						<a href="" class="d-inline-block px-2">全部分类</a>
+					</div>
+					<div class="pl-2 py-2">
+						<a href="" class="d-inline-block px-2">男生分类</a>
+					</div>
+					<ul class="nav pl-2 mx-0">
+						<li class="nav-item">
+							<a href="" class="nav-link px-2">玄幻</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">都市</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">仙侠</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">游戏</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">悬疑</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">历史</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">军事</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">灵异</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">言情</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">奇幻</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">武侠</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">科幻</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">职场</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">恐怖</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">体育</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">二次元</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">短篇</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">其他</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">乡村</a>
+						</li>
+					</ul>
+					<div class="pl-2 py-2" style="background-color: rgba(0,0,0,0.1);">
+						<a href="" class="d-inline-block px-2">女生分类</a>
+					</div>
+					<ul class="nav pl-2 mx-0">
+						<li class="nav-item">
+							<a href="" class="nav-link px-2">现代言情</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">穿越重生</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">豪门总裁</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">仙侠奇缘</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">古代言情</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">青春校园</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">同人小说</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">审美小说</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">玄幻言情</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">悬疑灵异</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">科幻空间</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">游戏竞技</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">其他</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">二次元</a>
+						</li>
+					</ul>
+					<div class="pl-2 py-2 mt-5" style="background-color: rgba(0,0,0,0.1);">
+						<a href="" class="d-inline-block px-2">热门标签</a>
+					</div>
+					<ul class="nav pl-2 mx-0">
+						<li class="nav-item">
+							<a href="" class="nav-link px-2">医生</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">都市</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">种田</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">特种兵</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">爽文</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">美女</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">热血</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">激情</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">搞笑</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">装逼</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">神魔</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">养成</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">猥琐</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">宅男</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">后宫</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">才女</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">背叛</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">冷库</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">权谋</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">复仇</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">灵异</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">异国情缘</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">生存奇遇</a>
+						</li>
+						<li>
+							<a href="" class="nav-link px-2">江湖恩怨</a>
+						</li>
+					</ul>
+					<!-- limited-free -->
+					<div class="pl-2 py-2 mt-5" style="background-color: rgba(0,0,0,0.1);">
+						<a href="" class="d-inline-block px-2">限时免费</a>
+					</div>
+					<ul class="nav mx-0">
+						<li class="nav-item mt-3 media">
+							<a href="" class="d-block nav-link px-0 align-self-start">
+								<img src="小说素材/龙族4·奥丁之渊/龙族4·奥丁之渊-封面.jpg" style="width: 95px; height: 120px;">
+							</a>
+							<div class="media-body">
+								<a href="" class="d-block px-2 mt-2">
+									<h5>奥丁之渊</h5>
+									<span class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 1;-webkit-box-orient: vertical;">作者：江南</span>
+									<span class="mt-2 overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+										<small>
+										圣诞夜，楚子航在北冰洋的破冰船上执行任务，误入了开启神秘之门的“死亡之岛”，在那里楚子航遭遇了一个白色的身影——“死神”，关键时刻，他放弃逃生，跃下海，挥刀而上。
+										恺撒已从卡塞尔学院毕业，成了执行部专员，路明非成为新一任的学生会主席。
+										偶然间，路明非发现，狮心会会长居然不是楚子航！连前任会长也不是！
+										学院里没有楚子航的档案，除了他，其他人甚至都不记得有这么个人曾经存在过。
+										</small>
+										<span class="d-inline-block ml-4 text-primary">详情</span>
+									</span>
+								</a>
+							</div>
+						</li>
+						<li class="nav-item mt-3 media">
+							<a href="" class="d-block nav-link px-0 align-self-start">
+								<img src="小说素材/斗罗大陆2·绝世唐门/绝世唐门-封面.jpg" style="width: 95px; height: 120px;">
+							</a>
+							<div class="media-body">
+								<a href="" class="d-block px-2 mt-2">
+									<h5>绝世唐门</h5>
+									<span class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 1;-webkit-box-orient: vertical;">作者：唐家三少</span>
+									<span class="mt-2 overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+										<small>
+										大陆传奇，一战成名；凤凰圣女，风火流星神界刀法；双升融合，金阳蓝月，雷霆之怒，这里没有魔法，没有斗气，没有武术，却有武魂。
+										唐门创立万年之后的斗罗大陆上，唐门式微。一代天骄横空出世，新一代史莱克七怪能否重振唐门，谱写一曲绝世唐门之歌？ 
+										百万年魂兽，手握日月摘星辰的死灵圣法神，导致唐门衰落的全新魂导器体系。一切的神奇都将一一展现。 
+										唐门暗器能否重振雄风，唐门能否重现辉煌，一切尽在绝世唐门！
+										</small>
+										<span class="d-inline-block ml-4 text-primary">详情</span>
+									</span>
+								</a>
+							</div>
+						</li>
+						<li class="nav-item mt-3 media">
+							<a href="" class="d-block nav-link px-0 align-self-start">
+								<img src="小说素材/雪中悍刀行/雪中悍刀行-封面.jpeg" style="width: 95px; height: 120px;">
+							</a>
+							<div class="media-body">
+								<a href="" class="d-block px-2 mt-2">
+									<h5>雪中悍刀行</h5>
+									<span class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 1;-webkit-box-orient: vertical;">作者：烽火戏诸侯</span>
+									<span class="mt-2 overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+										<small>
+										江湖是一张珠帘。
+										大人物小人物，是珠子，大故事小故事，是串线。
+										情义二字，则是那些珠子的精气神。
+										</small>
+										<span class="d-inline-block ml-4 text-primary">详情</span>
+									</span>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="col-9 px-0 h-100">
+					<!-- words-number -->
+					<div class="row mx-0 border-bottom border-secondary pb-3">
+						<span class="d-inline-block pr-4">
+							按字数：
+							<a href="" class="d-inline-block pr-2">全部</a>
+							<a href="" class="d-inline-block pr-2">10万字以下</a>
+							<a href="" class="d-inline-block pr-2">10-50万字</a>
+							<a href="" class="d-inline-block pr-2">50-100万字</a>
+							<a href="" class="d-inline-block">100万字以上</a>
+						</span>
+						<span class="d-inline-block pr-4">
+							按状态：
+							<a href="" class="d-inline-block mr-2">全部</a>
+							<a href="" class="d-inline-block mr-2">连载</a>
+							<a href="" class="d-inline-block">完结</a>
+						</span>
+						<span class="d-inline-block float-right">
+							按收费：
+							<a href="" class="d-inline-block mr-2">全部</a>
+							<a href="" class="d-inline-block mr-2">免费</a>
+							<a href="" class="d-inline-block mr-2">付费</a>
+							<a href="" class="d-inline-block">包月</a>
+						</span>
+					</div>
+					
+					<div class="py-3">
+						<span class="d-inline-block mr-4">
+							<a href="" class="d-inline-block">热度排序</a>
+							<i class="fa fa-long-arrow-down"></i>
+						</span>
+						<span class="d-inline-block mr-4">
+							<a href="" class="d-inline-block">更新时间</a>
+							<i class="fa fa-long-arrow-down"></i>
+						</span>
+					</div>
+					<ul class="nav h-100">
+						<li class="nav-link col-6 clearfix mb-4 bg-light px-0">
+							<a href="" class="d-block float-left mr-3 position-relative">
+								<img src="小说素材/龙族1·火之晨曦/龙族1·火之晨曦-封面.jpg" alt="" style="width: 140px;height: 190px;">
+							</a>
+							<div class="float-left px-0" style="width: 280px; height: 190px;">
+								<h4 class="my-0">
+									<a href="" class="py-0">龙族1·火之晨曦</a>
+								</h4>
+								<div class="px-0">
+									<small class="d-inline-block p-0">作者：江南</small>
+									<br/>
+									<span class="d-inline-block p-0"><small>更新章节：</small></span>
+									<a href="" class="d-inline-block p-0"><small>尾声</small></a>
+								</div>
+								<div class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+									他叫路明非，一个平凡普通的学生。他过着周而复始的生活，就在他以为他的一生就将如此度过的时候，
+									一封来自美国神秘学院的来信改变了他平淡的人生——世间有龙！你的使命是屠龙。
+									在热血与神秘的呼唤下，在爱与梦想的抉择下，他毅然选择了未知。
+									黑色的直升机划过天际，陌生国度的大门向他缓缓开启，平凡的中国小孩走上不平凡的屠龙’之路。
+									而遥远的卡塞尔学院却处处透着神秘——奇怪的课程、搞笑的学长、疯狂的教师、骄傲的同学……路明非刚刚进入学校就遭遇了无数的怪事。
+									同时，随之而来的挑战也开始了，等级考试、言灵考验、三峡龙影、龙族入侵……
+								</div>
+								<div class="mt-1">
+									<a href="NovelDetail.html" class="btn btn-warning px-4">立即阅读</a>
+									<a href="" class="btn border-secondary btn-outline-danger px-4">查看目录</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-link col-6 clearfix mb-4 bg-light px-0">
+							<a href="" class="d-block float-left mr-3 position-relative">
+								<img src="小说素材/斗罗大陆2·绝世唐门/绝世唐门-封面.jpg" alt="" style="width: 140px;height: 190px;">
+							</a>
+							<div class="float-left px-0" style="width: 280px; height: 190px;">
+								<h4 class="my-0">
+									<a href="" class="py-0">绝世唐门</a>
+								</h4>
+								<div class="px-0">
+									<small class="d-inline-block p-0">作者：唐家三少</small>
+									<br/>
+									<span class="d-inline-block p-0"><small>更新章节：</small></span>
+									<a href="" class="d-inline-block p-0"><small>第六百二十二章 大结局（四）</small></a>
+								</div>
+								<div class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+									大陆传奇，一战成名；凤凰圣女，风火流星神界刀法；双升融合，金阳蓝月，雷霆之怒，这里没有魔法，没有斗气，没有武术，却有武魂。
+									唐门创立万年之后的斗罗大陆上，唐门式微。一代天骄横空出世，新一代史莱克七怪能否重振唐门，谱写一曲绝世唐门之歌？ 
+									百万年魂兽，手握日月摘星辰的死灵圣法神，导致唐门衰落的全新魂导器体系。一切的神奇都将一一展现。 
+									唐门暗器能否重振雄风，唐门能否重现辉煌，一切尽在绝世唐门！
+								</div>
+								<div class="mt-1">
+									<a href="" class="btn btn-warning px-4">立即阅读</a>
+									<a href="" class="btn border-secondary btn-outline-danger px-4">查看目录</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-link col-6 clearfix mb-4 bg-light px-0">
+							<a href="" class="d-block float-left mr-3 position-relative">
+								<img src="小说素材/雪中悍刀行/雪中悍刀行-封面.jpeg" alt="" style="width: 140px;height: 190px;">
+							</a>
+							<div class="float-left px-0" style="width: 280px; height: 190px;">
+								<h4 class="my-0">
+									<a href="" class="py-0">雪中悍刀行</a>
+								</h4>
+								<div class="px-0">
+									<small class="d-inline-block p-0">作者：烽火戏诸侯</small>
+									<br/>
+									<span class="d-inline-block p-0"><small>更新章节：</small></span>
+									<a href="" class="d-inline-block p-0"><small>最终章 小二上酒</small></a>
+								</div>
+								<div class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+									江湖是一张珠帘。
+									大人物小人物，是珠子，大故事小故事，是串线。
+									情义二字，则是那些珠子的精气神。
+								</div>
+								<div class="mt-1">
+									<a href="" class="btn btn-warning px-4">立即阅读</a>
+									<a href="" class="btn border-secondary btn-outline-danger px-4">查看目录</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-link col-6 clearfix mb-4 bg-light px-0">
+							<a href="" class="d-block float-left mr-3 position-relative">
+								<img src="./小说素材/剑来/剑来-封面.jpg" alt="" style="width: 140px;height: 190px;">
+							</a>
+							<div class="float-left px-0" style="width: 280px; height: 190px;">
+								<h4 class="my-0">
+									<a href="" class="py-0">剑来</a>
+								</h4>
+								<div class="px-0">
+									<small class="d-inline-block p-0">作者：烽火戏诸侯</small>
+									<br/>
+									<span class="d-inline-block p-0"><small>更新章节：</small></span>
+									<a href="" class="d-inline-block p-0"><small>第八百四十五章 官子无敌</small></a>
+								</div>
+								<div class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+									大千世界，无奇不有。
+									我陈平安，唯有一剑，可搬山，倒海，降妖，镇魔，敕神，摘星，断江，摧城，开天！
+									我叫陈平安，平平安安的平安。我是一名剑客。
+								</div>
+								<div class="mt-1">
+									<a href="" class="btn btn-warning px-4">立即阅读</a>
+									<a href="" class="btn border-secondary btn-outline-danger px-4">查看目录</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-link col-6 clearfix mb-4 bg-light px-0">
+							<a href="" class="d-block float-left mr-3 position-relative">
+								<img src="小说素材/龙族2·悼亡者之瞳/龙族2·悼亡者之瞳-封面.jpg" alt="" style="width: 140px;height: 190px;">
+							</a>
+							<div class="float-left px-0" style="width: 280px; height: 190px;">
+								<h4 class="my-0">
+									<a href="" class="py-0">龙族2·悼亡者之瞳</a>
+								</h4>
+								<div class="px-0">
+									<small class="d-inline-block p-0">作者：江南</small>
+									<br/>
+									<span class="d-inline-block p-0"><small>更新章节：</small></span>
+									<a href="" class="d-inline-block p-0"><small>尾声 每个人的心里都有个死小孩</small></a>
+								</div>
+								<div class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+									又是一年夏日，衰仔路明非原本平静的生活被学院的任务再一次打破。
+									随着大地与山之龙王的苏醒，漂亮小学妹夏弥的出现，路明非的生活又迎来一个跌宕起伏的新篇章！
+									路明非，楚子航等人的命运将走向何方？众人的未来将何去何从？一切，从一个磅礴的雨夜开始！
+								</div>
+								<div class="mt-1">
+									<a href="" class="btn btn-warning px-4">立即阅读</a>
+									<a href="" class="btn border-secondary btn-outline-danger px-4">查看目录</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-link col-6 clearfix mb-4 bg-light px-0">
+							<a href="" class="d-block float-left mr-3 position-relative">
+								<img src="小说素材/龙族3·黑月之潮（上）/龙族3·黑月之潮（上）-封面.jpg" alt="" style="width: 140px;height: 190px;">
+							</a>
+							<div class="float-left px-0" style="width: 280px; height: 190px;">
+								<h4 class="my-0">
+									<a href="" class="py-0">龙族3·黑月之潮（上）</a>
+								</h4>
+								<div class="px-0">
+									<small class="d-inline-block p-0">作者：江南</small>
+									<br/>
+									<span class="d-inline-block p-0"><small>更新章节：</small></span>
+									<a href="" class="d-inline-block p-0"><small>第十五章 潜龙升空之海</small></a>
+								</div>
+								<div class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+									1991年冬，军人邦达列夫到达西伯利亚无名港口，他在那里看到了龙族骨骸与基因试验。
+									但是谁也不曾料到，他的到来为这个绝密的基地带来了毁灭。港口爆炸后，他携带神秘物品离开，从此龙族世界的命运发生了改变。
+									与此同时，一个神秘男孩带着女孩儿雷娜塔也悄悄离开了西伯利亚。
+								</div>
+								<div class="mt-1">
+									<a href="" class="btn btn-warning px-4">立即阅读</a>
+									<a href="" class="btn border-secondary btn-outline-danger px-4">查看目录</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-link col-6 clearfix mb-4 bg-light px-0">
+							<a href="" class="d-block float-left mr-3 position-relative">
+								<img src="小说素材/龙族3·黑月之潮（中）/龙族3·黑月之潮（中）-封面.jpg" alt="" style="width: 140px;height: 190px;">
+							</a>
+							<div class="float-left px-0" style="width: 280px; height: 190px;">
+								<h4 class="my-0">
+									<a href="" class="py-0">龙族3·黑月之潮（中）</a>
+								</h4>
+								<div class="px-0">
+									<small class="d-inline-block p-0">作者：江南</small>
+									<br/>
+									<span class="d-inline-block p-0"><small>更新章节：</small></span>
+									<a href="" class="d-inline-block p-0"><small>第十一章 末代皇帝&最后一个克格勃</small></a>
+								</div>
+								<div class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+									千鹤町街头，三人与暴走族赤备狭路相逢，掀起疯狂的对决。
+									死里逃生后，三人流落到歌舞伎町著名牛郎店高天原，开始了牛郎生涯。
+									与此同时，因日本分部的叛离，校长昂热孤身一人来到东京，与自己昔日的弟子犬山贺兵刃相见，卡塞尔学院与蛇岐八家彻底决裂.
+								</div>
+								<div class="mt-1">
+									<a href="" class="btn btn-warning px-4">立即阅读</a>
+									<a href="" class="btn border-secondary btn-outline-danger px-4">查看目录</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-link col-6 clearfix mb-4 bg-light px-0">
+							<a href="" class="d-block float-left mr-3 position-relative">
+								<img src="小说素材/龙族3·黑月之潮（下）/龙族3·黑月之潮（下）-封面.jpg" alt="" style="width: 140px;height: 190px;">
+							</a>
+							<div class="float-left px-0" style="width: 280px; height: 190px;">
+								<h4 class="my-0">
+									<a href="" class="py-0">龙族3·黑月之潮（下）</a>
+								</h4>
+								<div class="px-0">
+									<small class="d-inline-block p-0">作者：江南</small>
+									<br/>
+									<span class="d-inline-block p-0"><small>更新章节：</small></span>
+									<a href="" class="d-inline-block p-0"><small>尾声 さよなら，Friends</small></a>
+								</div>
+								<div class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+									源稚女与卡塞尔合作，欲与源稚生和解。白王却在此时苏醒，东京面临毁灭危机，副校长带卡塞尔装备部空降东京，全面介入危机。
+									源稚生与源稚女在红井对决，两人却败给宿命，双双重伤。王将再次死而复活，以绘梨衣身体为容器抽出白王之血，贯通黄泉之路进化为白王。
+									路明非目睹绘梨衣之死而悲伤欲绝，再次与路鸣泽完成交易。王与王的战争在天空打响，龙类的战争，从来不死不休。
+								</div>
+								<div class="mt-1">
+									<a href="" class="btn btn-warning px-4">立即阅读</a>
+									<a href="" class="btn border-secondary btn-outline-danger px-4">查看目录</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-link col-6 clearfix mb-4 bg-light px-0">
+							<a href="" class="d-block float-left mr-3 position-relative">
+								<img src="小说素材/龙族4·奥丁之渊/龙族4·奥丁之渊-封面.jpg" alt="" style="width: 140px;height: 190px;">
+							</a>
+							<div class="float-left px-0" style="width: 280px; height: 190px;">
+								<h4 class="my-0">
+									<a href="" class="py-0">龙族4·奥丁之渊</a>
+								</h4>
+								<div class="px-0">
+									<small class="d-inline-block p-0">作者：江南</small>
+									<br/>
+									<span class="d-inline-block p-0"><small>更新章节：</small></span>
+									<a href="" class="d-inline-block p-0"><small>尾声</small></a>
+								</div>
+								<div class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+									圣诞夜，楚子航在北冰洋的破冰船上执行任务，误入了开启神秘之门的“死亡之岛”，在那里楚子航遭遇了一个白色的身影——“死神”，关键时刻，他放弃逃生，跃下海，挥刀而上。
+									恺撒已从卡塞尔学院毕业，成了执行部专员，路明非成为新一任的学生会主席。
+									偶然间，路明非发现，狮心会会长居然不是楚子航！连前任会长也不是！
+									学院里没有楚子航的档案，除了他，其他人甚至都不记得有这么个人曾经存在过。
+								</div>
+								<div class="mt-1">
+									<a href="" class="btn btn-warning px-4">立即阅读</a>
+									<a href="" class="btn border-secondary btn-outline-danger px-4">查看目录</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-link col-6 clearfix mb-4 bg-light px-0">
+							<a href="" class="d-block float-left mr-3 position-relative">
+								<img src="./小说素材/将夜/将夜-封面.jpg" alt="" style="width: 140px;height: 190px;">
+							</a>
+							<div class="float-left px-0" style="width: 280px; height: 190px;">
+								<h4 class="my-0">
+									<a href="" class="py-0">将夜</a>
+								</h4>
+								<div class="px-0">
+									<small class="d-inline-block p-0">作者：猫腻</small>
+									<br/>
+									<span class="d-inline-block p-0"><small>更新章节：</small></span>
+									<a href="" class="d-inline-block p-0"><small>第一百三十章 结尾</small></a>
+								</div>
+								<div class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+									一段可歌可泣可笑可爱的草根崛起史。一个物质要求宁滥勿缺的开朗少年行。
+									书院后山里永恒回荡着他疑惑的声音：宁可永劫受沉沦，不从诸圣求解脱？…… 
+								</div>
+								<div class="mt-1">
+									<a href="" class="btn btn-warning px-4">立即阅读</a>
+									<a href="" class="btn border-secondary btn-outline-danger px-4">查看目录</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-link col-6 clearfix mb-4 bg-light px-0">
+							<a href="" class="d-block float-left mr-3 position-relative">
+								<img src="小说素材/斗破苍穹/斗破苍穹-封面.jpg" alt="" style="width: 140px;height: 190px;">
+							</a>
+							<div class="float-left px-0" style="width: 280px; height: 190px;">
+								<h4 class="my-0">
+									<a href="" class="py-0">斗破苍穹</a>
+								</h4>
+								<div class="px-0">
+									<small class="d-inline-block p-0">作者：天蚕土豆</small>
+									<br/>
+									<span class="d-inline-block p-0"><small>更新章节：</small></span>
+									<a href="" class="d-inline-block p-0"><small>第一千六百二十三章 结束，也是开始</small></a>
+								</div>
+								<div class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+									三十年河东，三十年河西，莫欺少年穷!
+									年仅15岁的萧家废物，于此地，立下了誓言，从今以后便一步步走向斗气大陆巅峰! 
+									这里是属于斗气的世界，没有花俏艳丽的魔法，有的，仅仅是繁衍到巅峰的斗气!
+									想要知道异界的斗气在发展到巅峰之后是何种境地吗?
+									等级制度：一至九段斗之气，斗者，斗师，大斗师，斗灵，斗王，斗皇，斗宗，斗尊，（半圣）斗圣，斗帝。
+								</div>
+								<div class="mt-1">
+									<a href="" class="btn btn-warning px-4">立即阅读</a>
+									<a href="" class="btn border-secondary btn-outline-danger px-4">查看目录</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-link col-6 clearfix mb-4 bg-light px-0">
+							<a href="" class="d-block float-left mr-3 position-relative">
+								<img src="小说素材/斗罗大陆/斗罗大陆-封面.jpg" alt="" style="width: 140px;height: 190px;">
+							</a>
+							<div class="float-left px-0" style="width: 280px; height: 190px;">
+								<h4 class="my-0">
+									<a href="" class="py-0">斗罗大陆</a>
+								</h4>
+								<div class="px-0">
+									<small class="d-inline-block p-0">作者：唐家三少</small>
+									<br/>
+									<span class="d-inline-block p-0"><small>更新章节：</small></span>
+									<a href="" class="d-inline-block p-0"><small>第二百三十六章 大结局，最后一...</small></a>
+								</div>
+								<div class="overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+									唐门百年难得一见的天才唐三因私学唐门高深内功，被追至悬崖边。
+									他选择以死明志，将绝世暗器佛怒唐莲留下后纵身一跃……意想之中的死亡并没有到来，唐三竟然阴差阳错来到了另一世界，身体也变成了另外一人。
+									这里是斗罗大陆中一个普通的村庄——圣魂村，小小的唐三在这里开始了他的魂师修炼之路，并萌生了振兴唐门的梦想。
+								</div>
+								<div class="mt-1">
+									<a href="" class="btn btn-warning px-4">立即阅读</a>
+									<a href="" class="btn border-secondary btn-outline-danger px-4">查看目录</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<!-- paging -->
+					<div class="row">
+						<div class="col-6"></div>
+						<ul class="pagination col-6 d-flex justify-content-end">
+							<li class="page-item">
+								<a href="#" class="page-link active border-0 bg-light">1</a>
+							</li>
+							<li class="page-item">
+								<a href="" class="page-link border-0 bg-light">2</a>
+							</li>
+							<li class="page-item">
+								<a href="" class="page-link border-0 bg-light">3</a>
+							</li>
+							<li class="page-item">
+								<a href="" class="page-link border-0 bg-light">4</a>
+							</li>
+							<li class="page-item">
+								<a href="" class="page-link border-0 bg-light">5</a>
+							</li>
+							<span class="d-inline-block px-3">...</span>
+							<li class="page-item">
+								<a href="" class="page-link border-0 bg-light">3442</a>
+							</li>
+							<li class="page-item">
+								<a href="" class="page-link border-0 bg-light">></a>
+							</li>
+							<input type="text" class="border border-primary mx-3 px-3" style="width: 30px;">
+							<li class="page-item">
+								<a href="" class="page-link">跳转</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- footer -->
+		<div class="text-center" style="background-color: rgba(0,0,0,0.1);">
+			<p class="py-1 mb-0">
+				<a href="">关于我们</a>
+				<a href="">意见反馈</a>
+				<a href="">用户协议</a>
+				<a href="">隐私政策</a>
+			</p>
+			<p class="mb-0">你好！欢迎阅读小说</p>
+			<p class="py-1 mb-0">网站所有素材皆只用作学习及作业使用</p>
+		</div>
+		<script src="./js/jquery/jquery-3.5.1.slim.min.js jquery-3.5.1.slim.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/bootstrap/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/Js.js"></script>
+	</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./Style.css"/>
+	</head>
+	<body onload="draw();">
+		<!-- header -->
+		<div id="header" class="w-100 border-bottom border-warning px-5">
+			<div class="row h-50 my-3">
+				<div class="col-3 p-0 d-flex align-items-center justify-content-center">
+					<!-- logo -->
+					<a href="" class="d-block">
+						<canvas id="canvas" width="60" height="60"></canvas>
+					</a>
+				</div>
+				<div class="col-6 p-0 d-flex align-items-center justify-content-center">
+					<div class="p-0">
+						<div class="border rounded clearfix pl-2" style="width: 480px; height: 34px;" style="border: 1px solid #ced4da;">
+							<input type="text" class="border-0 d-inline-block" placeholder="你好!明天" style="width: 440px;height: 32px;">
+							<i class="fa fa-search fa-2x d-inline-block text-light float-right"></i>
+						</div>
+						<div class="">
+							<a href="" class="d-inline-block mr-3">
+								<span><small>龙族3·黑月之潮</small></span>
+							</a>
+							<a href="" class="d-inline-block mr-3">
+								<span><small>雪中悍刀行</small></span>
+							</a>
+							<a href="" class="d-inline-block mr-3">
+								<span><small>斗破苍穹</small></span>
+							</a>
+							<a href="" class="d-inline-block mr-3">
+								<span><small>将夜</small></span>
+							</a>
+							<a href="" class="d-inline-block mr-3">
+								<span><small>斗罗大陆</small></span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 p-0 d-flex align-items-center justify-content-center">
+					<div class="row" style="height: 32px;">
+						<div class="d-inline-block">
+							<span class="">Samuel</span>
+							<i class="fa fa-angle-down p-2" data-toggle="dropdown"></i>
+							<div class="dropdown-menu">
+								<a href="MyMainPage.html" class="dropdown-item">个人主页</a>
+								<a href="" class="dropdown-item">最近阅读</a>
+								<a href="" class="dropdown-item">我的账户</a>
+								<a href="" class="dropdown-item">系统通知</a>
+								<a href="" class="dropdown-item">退出登录</a>
+							</div>
+						</div>
+						<a href="" class="btn-sm bg-warning py-1">
+							<span class="">签到</span>
+						</a>
+						<em class="d-inline-block px-2">|</em>
+						<div href="" class="d-inline-block">
+							<span class="">我的书架</span>
+							<i class="fa fa-angle-down p-2" data-toggle="dropdown"></i>
+							<div class="dropdown-menu">
+								<a href="NovelDetail.html" class="dropdown-item">火之晨曦</a>
+								<a href="" class="dropdown-item">雪中悍刀行</a>
+								<a href="" class="dropdown-item">绝世唐门</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- class -->
+			<div class="row">
+				<div class="col-3" style="z-index: 8;">
+					<div id="types" class="mx-auto" style="width: 240px;">
+						<a href="" class="d-block px-4 border border-info d-flex align-items-center justify-content-between">
+							<i class="fa fa-th p-2"></i>
+							<span class="d-inline-block">热门分类</span>
+							<i class="fa fa-angle-down fa-2x p-2"></i>
+						</a>
+						<div class="mx-auto p-2 text-black-50" style="background-color: #7babbf;">
+							<a href="" class="mx-1 mt-2">现代言情</a>
+							<a href="" class="mx-1 mt-2">玄幻</a>
+							<a href="" class="mx-1 mt-2">都市</a>
+							<a href="" class="mx-1 mt-2">军事</a>
+							<a href="" class="mx-1 mt-2">豪门总裁</a> 
+							<a href="" class="mx-1 mt-2">历史</a>
+							<a href="" class="mx-1 mt-2">游戏</a> 
+							<a href="" class="mx-1 mt-2">科幻</a> 
+							<a href="" class="mx-1 mt-2">古代言情</a> 
+							<a href="" class="mx-1 mt-2">仙侠</a> 
+							<a href="" class="mx-1 mt-2">武侠</a> 
+							<a href="" class="mx-1 mt-2">体育</a> 
+							<a href="" class="mx-1 mt-2">玄幻言情</a> 
+							<a href="" class="mx-1 mt-2">青春</a> 
+							<a href="" class="mx-1 mt-2">二次元</a> 
+							<a href="" class="mx-1 mt-2">科幻空间</a>
+							<a href="" class="mx-1 mt-2">游戏竞技</a> 
+						</div>
+						<div class="mx-auto px-1 clearfix" style="background-color: #7babbf;">
+							<a href="" class="ml-2 mb-2 float-left">现代言情</a> 
+							<a href="Classify.html" class="mr-2 mb-2 float-right">全部分类></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 p-0 d-flex justify-content-center align-items-center" style="height: 50px;">
+					<ul class="nav d-flex" style="font-size: 20px;">
+						<li class="nav-link px-2">
+							<a href="Index.html" class="nav-link">首页</a>
+						</li>
+						<li class="nav-link px-2">
+							<a href="Classify.html" class="nav-link">男生</a>
+						</li>
+						<li class="nav-link px-2">
+							<a href="" class="nav-link">女生</a>
+						</li>
+						<li class="nav-link px-2">
+							<a href="" class="nav-link">包月</a>
+						</li>
+						<li class="nav-link px-2">
+							<a href="" class="nav-link">完本</a>
+						</li>
+						<li class="nav-link px-2">
+							<a href="" class="nav-link">免费</a>
+						</li>
+						<li class="nav-link px-2">
+							<a href="" class="nav-link">排行榜</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-3 p-0"></div>
+			</div>
+		</div>
+		<!-- box-center -->
+		<div class="w-100 bg-light px-5 py-3">
+			<!-- 导航 -->
+			<div class="row">
+				<!-- crumb -->
+				<div class="col-3 d-flex align-items-center justify-content-center">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb bg-light">
+							<li>当前位置：</li>
+							<li class="breadcrumb-item">
+								<a href="">首页</a>
+							</li>
+							<li class="breadcrumb-item">
+								<a href="">我的主页</a>
+							</li>
+						</ol>
+					</nav>
+				</div>
+				<div class="col-6"></div>
+			</div>
+			<div class="row">
+				<!-- tab-nav -->
+				<div class="col-3 d-flex align-items-center justify-content-center h-100 mb-5">
+					<ul class="nav flex-column list-unstyled px-3 border w-75 h-100">
+						<li class="nav-item">
+							<a href="#MyMainPage" class="nav-link border-bottom py-3 active" data-toggle="tab">我的主页</a>
+						</li>
+						<li class="nav-item">
+							<a href="#MyBookrack" class="nav-link border-bottom py-3" data-toggle="tab">我的书架</a>
+						</li>
+						<li class="nav-item">
+							<a href="#MyAccount" class="nav-link border-bottom py-3" data-toggle="tab">我的账户</a>
+						</li>
+						<li class="nav-item">
+							<a href="#SystemMessage" class="nav-link border-bottom py-3" data-toggle="tab">系统通知</a>
+						</li>
+					</ul>
+				</div>
+				<!-- tab-pane -->
+				<div class="col-9">
+					<div class="tab-content">
+						<div id="MyMainPage" class="tab-pane active show fade">
+							<div class="row">
+								<div class="col-2 px-0">
+									<img src="image/头像.jpg" alt="" class="img-fluid">
+									<a href="" class="bg-warning mt-3 w-100 text-center">
+										<i class="fa fa-edit"></i>签到
+									</a>
+								</div>
+								<div class="col-10 px-4">
+									<div class="d-block">
+										<span class="mr-2" style="font-size: 18px;">Samuel</span>
+										<span class="mr-3">(ID:10414541)</span>
+										<span class="bg-warning text-center mr-3 px-3 rounded">v0</span>
+										<i class="fa fa-diamond text-primary mr-3"></i>
+										<a href="">修改密码</a>
+									</div>
+									<div class="d-block mt-1 mb-4 d-flex align-content-center">
+										<div class="progress d-inline-block mr-1 my-auto" style="width: 30%;height: 16px;">
+										  <div class="progress-bar bg-warning d-inline-block h-100" style="width:60%"></div>
+										</div>
+										<span class="mr-3">成长值</span>
+										<span class="mr-3">10/100</span>
+										<a href="">查看升级奖励</a>
+									</div>
+									<div>
+										<span class="mr-3">账户余额：0</span>
+										<a href="">充值</a>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<div id="MyBookrack" class="tab-pane">
+							<ul class="nav nav-tabs">
+								<li class="nav-item">
+									<a href="#Bookrack" class="nav-link active" data-toggle="tab">我的书架</a>
+								</li>
+								<li class="nav-item">
+									<a href="#Record" class="nav-link" data-toggle="tab">最近阅读</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div id="Bookrack" class="tab-pane active show fade">
+									<table class="table mb-0" style="font-size: 14px;">
+										<thead class="bg-primary">
+											<tr>
+												<th></th>
+												<th>类型</th>
+												<th>书名</th>
+												<th>作者</th>
+												<th>最近阅读章节</th>
+												<th>更新章节</th>
+												<th>更新时间</th>
+												<th>阅读操作</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="position-relative d-inline-block">
+														<input type="checkbox" id="point1">
+														<label for="point1"></label>
+													</div>
+												</td>
+												<td>玄幻小说</td>
+												<td>龙族1·火之晨曦</td>
+												<td>江南</td>
+												<td>序幕 白帝城</td>
+												<td>尾声</td>
+												<td>2017-10-12 11:21:01</td>
+												<td class="px-0"><a href="NovelDetail.html">开始阅读></a></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="position-relative d-inline-block">
+														<input type="checkbox" id="point2">
+														<label for="point2"></label>
+													</div>
+												</td>
+												<td>玄幻小说</td>
+												<td>龙族2·悼亡者之瞳</td>
+												<td>江南</td>
+												<td>序 幕 雨落狂流之暗</td>
+												<td>尾 声 每个人的心里都有个死小孩</td>
+												<td>2019-06-08 02:37</td>
+												<td class="px-0"><a href="">开始阅读></a></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="position-relative d-inline-block">
+														<input type="checkbox" id="point3">
+														<label for="point3"></label>
+													</div>
+												</td>
+												<td>玄幻小说</td>
+												<td>绝世唐门</td>
+												<td>唐家三少</td>
+												<td>引子 神界！唐三一家</td>
+												<td>第六百二十二章 大结局（四）</td>
+												<td>2019-07-28 14:51:03</td>
+												<td class="px-0"><a href="">开始阅读></a></td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="d-inline-block my-4 mx-2 px-1">
+										<div class="position-relative d-inline-block float-left">
+											<input type="checkbox" id="points">
+											<label for="points"></label>
+										</div>
+										<a href="" class="d-inline-block" style="text-indent: 20px; float: left;">
+											全选
+										</a>
+										<a href="" class="d-inline-block mx-4">删除</a>
+										<span>每页10条记录,共1条记录</span>
+									</div>
+								</div>
+								<div id="Record" class="tab-pane">
+									<table class="table mb-0" style="font-size: 14px;">
+										<thead class="bg-primary">
+											<tr>
+												<th></th>
+												<th>类型</th>
+												<th>书名</th>
+												<th>作者</th>
+												<th>最近阅读章节</th>
+												<th>更新章节</th>
+												<th>更新时间</th>
+												<th>阅读操作</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="position-relative d-inline-block">
+														<input type="checkbox" id="point1">
+														<label for="point1"></label>
+													</div>
+												</td>
+												<td>玄幻小说</td>
+												<td>龙族1·火之晨曦</td>
+												<td>江南</td>
+												<td>序幕 白帝城</td>
+												<td>第十一幕 七宗罪</td>
+												<td>2017-10-12 11:21:01</td>
+												<td><a href="">开始阅读></a></td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="d-inline-block my-4 mx-2 px-1">
+										<div class="position-relative d-inline-block float-left">
+											<input type="checkbox" id="points">
+											<label for="points"></label>
+										</div>
+										<a href="" class="d-inline-block" style="text-indent: 20px; float: left;">
+											全选
+										</a>
+										<a href="" class="d-inline-block mx-4">删除</a>
+										<span>每页10条记录,共1条记录</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="MyAccount" class="tab-pane">
+							<div class="border-bottom bg-light">
+								<h4>充值方式</h4>
+							</div>
+							<div class="mt-4 mb-1">
+								充值账号：
+								<span>Samuel</span>
+							</div>
+							<div class="mb-2 mt-1">
+								账号余额：
+								<span>996</span>
+							</div>
+							<div class="row mb-2">
+								<div class="col-1 pr-0 text-nowrap">充值金额:</div>
+								<div id="Money" class="col-10">
+									<ul class="nav">
+										<li class="nav-item col-4 mb-2">
+											<a href="#" class="border border-danger py-2 text-center w-100">
+												<span>￥1</span>
+												（=10阅劵）
+											</a>
+										</li>
+										<li class="nav-item col-4 mb-2">
+											<a href="#" class="border border-dark-50 py-2 text-center w-100">
+												<span>￥6</span>
+												（=60阅劵）
+											</a>
+										</li>
+										<li class="nav-item col-4 mb-2">
+											<a href="#" class="border border-dark-50 py-2 text-center w-100">
+												<span>￥12</span>
+												（=120阅劵）
+											</a>
+										</li>
+										<li class="nav-item col-4 mb-2">
+											<a href="#" class="border border-dark-50 py-2 text-center w-100">
+												<span>￥72</span>
+												（=720阅劵）
+											</a>
+										</li>
+										<li class="nav-item col-4 mb-2">
+											<a href="#" class="border border-dark-50 py-2 text-center w-100">
+												<span>￥100</span>
+												（=1000阅劵）
+											</a>
+										</li>
+										<li class="nav-item col-4 mb-2">
+											<a href="#" class="border border-dark-50 py-2 text-center w-100">
+												<span>￥172</span>
+												（=1720阅劵）
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="col-1"></div>
+							</div>
+							<div class="row mb-2">
+								<div class="col-1 pr-0 text-nowrap">支付方式:</div>
+								<div id="Way" class="col-10">
+									<ul class="nav mb-2">
+										<li class="nav-item col-2 mb-2">
+											<a href="#" class="border border-danger py-2 text-center w-100">
+												<i class="fa fa-weixin text-success"></i>
+												微信支付
+											</a>
+										</li>
+										<li class="nav-item col-2 mb-2">
+											<a href="#" class="border border-dark-50 py-2 text-center w-100">
+												<i class="fa rounded bg-primary text-white p-1">支</i>
+												支付宝
+											</a>
+										</li>
+									</ul>
+									<div class="row pl-3 mb-3">
+										<div class="position-relative d-inline-block float-left ml-3 pr-1">
+											<input type="checkbox" id="poin">
+											<label for="poin"></label>
+										</div>
+										已阅读
+										<a href="#">《用户充值须知》</a>
+									</div>
+									<div class="row pl-3 mb-3">
+										<div class="pl-3">
+											<a href="#" class="btn btn-warning py-1 px-4">去付款</a>	
+										</div>
+									</div>
+								</div>
+								<div class="col-1"></div>
+							</div>
+						</div>
+						<div id="SystemMessage" class="tab-pane">
+							<div class="border-bottom py-2"><h4>系统通知</h4></div>
+							<ul class="nav flex-column">
+								<li class="nav-item border-bottom mt-4">
+									<div class="mb-2">
+										<div class="position-relative d-inline-block float-left">
+											<input type="checkbox" id="point4">
+											<label for="point4"></label>
+										</div>
+										<span class="" style="text-indent: 20px; float: left;">部分小说下线通知</span>
+										<span class="float-right">2020-12-11</span>
+									</div>
+									<div class="mb-4">
+										<p class="mx-4 pl-2 mb-0 overflow-hidden w-75" style="display: -webkit-inline-box; -webkit-line-clamp: 1;
+										-webkit-box-orient: vertical;">亲爱的书友，您好！很抱歉由于版权原因本站将下架一部分小说，
+										给您带来的不便敬请谅解~如有疑问请关注微信“多多看书服务号”，
+										客服会及时为您解答~</p>
+										<i class="fa fa-angle-down fa-fw float-right"></i>
+									</div>
+								</li>
+								<li class="nav-item border-bottom mt-4">
+									<div class="mb-2">
+										<div class="position-relative d-inline-block float-left">
+											<input type="checkbox" id="point5">
+											<label for="point5"></label>
+										</div>
+										<span class="" style="text-indent: 20px; float: left;">部分小说下线通知</span>
+										<span class="float-right">2020-12-11</span>
+									</div>
+									<div class="mb-4">
+										<p class="mx-4 pl-2 mb-0 overflow-hidden w-75" style="display: -webkit-inline-box; -webkit-line-clamp: 1;
+										-webkit-box-orient: vertical;">亲爱的书友，您好！很抱歉由于版权原因本站将下架一部分小说，
+										给您带来的不便敬请谅解~如有疑问请关注微信“多多看书服务号”，
+										客服会及时为您解答~</p>
+										<i class="fa fa-angle-down fa-fw float-right"></i>
+									</div>
+								</li>
+								<li class="nav-item border-bottom mt-4">
+									<div class="mb-2">
+										<div class="position-relative d-inline-block float-left">
+											<input type="checkbox" id="point6">
+											<label for="point6"></label>
+										</div>
+										<span class="" style="text-indent: 20px; float: left;">部分小说下线通知</span>
+										<span class="float-right">2020-12-11</span>
+									</div>
+									<div class="mb-4">
+										<p class="mx-4 pl-2 mb-0 overflow-hidden w-75" style="display: -webkit-inline-box; -webkit-line-clamp: 1;
+										-webkit-box-orient: vertical;">亲爱的书友，您好！很抱歉由于版权原因本站将下架一部分小说，
+										给您带来的不便敬请谅解~如有疑问请关注微信“多多看书服务号”，
+										客服会及时为您解答~</p>
+										<i class="fa fa-angle-down fa-fw float-right"></i>
+									</div>
+								</li>
+							</ul>
+							<div class="d-inline-block my-4">
+								<div class="position-relative d-inline-block float-left">
+									<input type="checkbox" id="points">
+									<label for="points"></label>
+								</div>
+								<a href="" class="d-inline-block" style="text-indent: 20px; float: left;">
+									全选
+								</a>
+								<a href="" class="d-inline-block mx-4">删除</a>
+								<span>每页10条记录,共1条记录</span>
+							</div>
+							<!-- 分页 -->
+							<div class="row">
+								<div class="col-6"></div>
+								<ul class="pagination col-6 d-flex justify-content-end">
+									<li class="page-item">
+										<a href="#" class="page-link active border-0 bg-light">1</a>
+									</li>
+									<li class="page-item">
+										<a href="" class="page-link border-0 bg-light">2</a>
+									</li>
+									<li class="page-item">
+										<a href="" class="page-link border-0 bg-light">3</a>
+									</li>
+									<li class="page-item">
+										<a href="" class="page-link border-0 bg-light">></a>
+									</li>
+									<input type="text" class="border border-primary mx-3 px-3" style="width: 30px;">
+									<li class="page-item">
+										<a href="" class="page-link">跳转</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- footer -->
+		<div class="text-center" style="background-color: rgba(0,0,0,0.1);">
+			<p class="py-1 mb-0">
+				<a href="">关于我们</a>
+				<a href="">意见反馈</a>
+				<a href="">用户协议</a>
+				<a href="">隐私政策</a>
+			</p>
+			<p class="mb-0">你好！欢迎阅读小说</p>
+			<p class="py-1 mb-0">网站所有素材皆只用作学习及作业使用</p>
+		</div>
+		<script src="./js/jquery/jquery-3.5.1.slim.min.js jquery-3.5.1.slim.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/bootstrap/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./Js.js"></script>
+	</body>
+</html>

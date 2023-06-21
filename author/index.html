@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="flex-between">
+            <!-- left -->
+            <div class="left flex-center">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="‪" alt="">
+                        <span>作家专区</span>
+                    </a>
+                </div>
+                <!-- nav -->
+                <ul class="flex-center">
+                    <li>
+                        <a href="./index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="./article.html">文章</a>
+                    </li>
+                    <li>
+                        <a href="./spcolumn.html">专栏</a>
+                    </li>
+                    <li>
+                        <a href="./viewpoint.html">话题</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- right -->
+            <div class="right">
+                <!-- login -->
+                <div class="login flex-between" style="display:flex">
+                    <!-- working -->
+                    <div class="working" index='0'>
+                        <a href="./dashboard.html">
+                            <i class="fa fa-desktop"></i>
+                        </a>
+                        <div>123</div>
+                    </div>
+                    <!-- tips -->
+                    <div class="tips" index='1'>
+                        <a href="">
+                            <i class="fa fa-bell-o"></i>
+                        </a>
+                        <div>123</div>
+                    </div>
+                    <!-- user -->
+                    <div class="user" index='2'>
+                        <a href="./personPage.html">
+                            <i class="fa fa-user-circle"></i>
+                        </a>
+                        <div >
+                            <!-- level-info -->
+                            <div class="level-info">
+                                <h3>
+                                    <a href="./personPage.html">
+                                        原创作家<span>普通</span>
+                                    </a>
+                                </h3>
+                            </div>
+                            <!-- menu-list -->
+                            <div class="menu-list">
+                                <dl>
+                                    <dd>
+                                        <a href="">作品管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">立即写作</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dd>
+                                        <a href="">我收藏的文章</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">我关注的专栏</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dd>
+                                        <a href="">个人资料</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">修改密码</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">退出登录</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- no-login -->
+                <div class="no-login" style="display: none">
+                    <a href="./login.html">登录</a>
+                    <a href="">成为作家</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- content -->
+    <div class="content flex-start">
+        <!-- left -->
+        <div class="left">
+            <!-- 轮播 -->
+            <div class="swiper flex-center">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://ccstatic-1252317822.file.myqcloud.com/college/bannerimg/2021-05-11/6099f8860665c.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ccstatic-1252317822.file.myqcloud.com/college/bannerimg/2021-05-10/6098dfe264e2b.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ccstatic-1252317822.file.myqcloud.com/college/bannerimg/2020-09-29/5f72ea1708abc.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+                    
+                    <!-- 如果需要导航按钮 -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    
+                    <!-- 如果需要滚动条 -->
+                    <!-- <div class="swiper-scrollbar"></div> -->
+                </div>
+            </div>
+            <!-- 推荐话题 -->
+            <div class="topic box-shadow-sm">
+                <div class="flex-between">
+                    <h2>推荐话题</h2>
+                    <div>
+                        <span>更多</span>
+                        >
+                    </div>
+                </div>
+                <ul class="flex-grid">
+                    <li>
+                        <a href="">
+                            <em></em>
+                            <h4>如何给青春校园小说起书名？</h4>
+                            <p>12.8万 阅读 · 4409 观点</p>
+                            <button>参与讨论</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <em></em>
+                            <h4>如何给？</h4>
+                            <p>12.8万 阅读 · 4409 观点</p>
+                            <button>参与讨论</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <em></em>
+                            <h4>如何给青春校园小说起书名？青春校园小说起书名</h4>
+                            <p>12.8万 阅读 · 4409 观点</p>
+                            <button>参与讨论</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <em></em>
+                            <h4>如何给青春校园小说起书名？</h4>
+                            <p>12.8万 阅读 · 4409 观点</p>
+                            <button>参与讨论</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <em></em>
+                            <h4>如何给青春校园小说起书名？</h4>
+                            <p>12.8万 阅读 · 4409 观点</p>
+                            <button>参与讨论</button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <em></em>
+                            <h4>如何给青春校园小说起书名？</h4>
+                            <p>12.8万 阅读 · 4409 观点</p>
+                            <button>参与讨论</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 推荐文章 -->
+            <div class="article box-shadow-sm">
+                <div class="flex-between">
+                    <h2>推荐文章</h2>
+                    <div>
+                        <span>更多</span>
+                        >
+                    </div>
+                </div>
+                <ul>
+                    <li class="flex-center">
+                        <a href="">
+                            <img src="https://ccstatic-1252317822.file.myqcloud.com/college/collegecoursecover/2020-12-29/5feae97261ac5.jpg" alt="">
+                        </a>
+                        <div class="info">
+                            <div>推荐课程</div>
+                            <h3>
+                                <a href="">
+                                    【写作素材课】精品赏析01：金陵十二钗正册判词及解析（上）
+                                  </a>
+                            </h3>
+                            <p>
+                                <a href="">
+                                    《红楼梦》是中国古典四大名著之一，同时也是一部具有世界影响力的人情小说。
+                                    “真事隐去，假语村言”的特殊笔法更是令后世读者脑洞大开，揣测之说久而遂多。
+                                    二十世纪以来，学术界因《红楼梦》异常出色的艺术成就和丰富深刻的思想底蕴而产生了以《红楼梦》为研究对象的专门学问——红学。
+                                </a>
+                            </p>
+                            <div class="flex-between">
+                                <span>2020-12-29 阅读 1.1万</span>
+                                <i class="fa fa-bookmark-o" data-id="1"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex-center">
+                        <a href="">
+                            <img src="https://ccstatic-1252317822.file.myqcloud.com/college/collegecoursecover/2020-12-29/5feae97261ac5.jpg" alt="">
+                        </a>
+                        <div class="info">
+                            <div>推荐课程</div>
+                            <h3>
+                                <a href="">
+                                    【写作素材课】精品赏析01：金陵十二钗正册判词及解析（上）
+                                  </a>
+                            </h3>
+                            <p>
+                                <a href="">
+                                    《红楼梦》是中国古典四大名著之一，同时也是一部具有世界影响力的人情小说。
+                                    “真事隐去，假语村言”的特殊笔法更是令后世读者脑洞大开，揣测之说久而遂多。
+                                    二十世纪以来，学术界因《红楼梦》异常出色的艺术成就和丰富深刻的思想底蕴而产生了以《红楼梦》为研究对象的专门学问——红学。
+                                </a>
+                            </p>
+                            <div class="flex-between">
+                                <span>2020-12-29 阅读 1.1万</span>
+                                <a href="">
+                                    <i class="fa fa-bookmark-o"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex-center">
+                        <a href="">
+                            <img src="https://ccstatic-1252317822.file.myqcloud.com/college/collegecoursecover/2020-12-29/5feae97261ac5.jpg" alt="">
+                        </a>
+                        <div class="info">
+                            <div>推荐课程</div>
+                            <h3>
+                                <a href="">
+                                    【写作素材课】精品赏析01：金陵十二钗正册判词及解析（上）
+                                  </a>
+                            </h3>
+                            <p>
+                                <a href="">
+                                    《红楼梦》是中国古典四大名著之一，同时也是一部具有世界影响力的人情小说。
+                                    “真事隐去，假语村言”的特殊笔法更是令后世读者脑洞大开，揣测之说久而遂多。
+                                    二十世纪以来，学术界因《红楼梦》异常出色的艺术成就和丰富深刻的思想底蕴而产生了以《红楼梦》为研究对象的专门学问——红学。
+                                </a>
+                            </p>
+                            <div class="flex-between">
+                                <span>2020-12-29 阅读 1.1万</span>
+                                <a href="">
+                                    <i class="fa fa-bookmark-o"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div>
+                    <a href="">查看全部文章</a>
+                </div>
+            </div>
+            <!-- 推荐专栏 -->
+            <div class="box-shadow-sm"></div>
+            <!-- 最新文章 -->
+            <div class="box-shadow-sm"></div>
+        </div>
+        <!-- right -->
+        <div class="right">
+            <!-- user -->
+            <div class="user box-shadow-sm" style="display: none;">
+                <div class="info flex-center">
+                    <div class="hello">
+                        <h3>上午好，原创作家</h3>
+                        <p>您还没有创建任何作品
+                            点击下方按钮开始写作之旅吧</p>
+                    </div>
+                    <div class="date">
+                        <span>06</span>
+                        <span>/</span>
+                        <span>03</span>
+                    </div>
+                </div>
+                <button>创建作品</button>
+            </div>
+            <!-- 更新说明 -->
+            <div class="version box-shadow-sm">
+                <div class="flex-between">
+                    <h2>推荐话题</h2>
+                    <div>
+                        <span>更多</span>
+                        >
+                    </div>
+                </div>
+                <div class="version-item">
+                    <h3 >作家专区V3.1</h3>
+                    <span>2021-04-01</span> 
+                    <p>1.写作页面改版。</p>
+                    <p>2.写作页面新手引导改版。</p>
+                    <p>3.写作页面新功能引导改版。</p>
+                    <p>4.写作页面新增章节快速查询能力。</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- footer -->
+    <footer class="flex-center">
+        <div class="flex-center">
+            <p>
+                作者专区
+            </p>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+    <script>        
+        var mySwiper = new Swiper ('.swiper-container', {
+            autoplay:true,
+            direction: 'horizontal', // 垂直切换选项
+            loop: true, // 循环模式选项
+          
+          // 如果需要分页器
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          
+          // 如果需要前进后退按钮
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          
+          // 如果需要滚动条
+        //   scrollbar: {
+        //     el: '.swiper-scrollbar',
+        //   },
+        })        
+    </script>
+    <script>
+        //import axios from './js/main.js';  
+        //window.addEventListener("load",isLogin);
+        let login = document.querySelector(".login");
+        let noLogin = document.querySelector(".no-login");
+        function isLogin() {
+            if (true) {
+                login.style.display = "flex";
+                noLogin.style.display = "none";
+            } else {
+                login.style.display = "none";
+                noLogin.style.display = "flex";
+            }
+        }
+        //post传数据
+        function postCon(url, params) {
+            return new Promise((resolve, reject) => {
+                axios.post(url, params).then((res) => {
+                    resolve(res.data);
+                }).catch((err) => {
+                    reject(err);
+                })
+            })
+        }
+        function collect(){
+            let i=document.querySelectorAll('.left .article ul li .info>div:last-child i');
+            let id;
+            i.forEach((el,i)=>{
+                el.addEventListener("click",async(e)=>{
+                    console.log("start")
+                    id=el.getAttribute('data-id');
+                    let data =await postCon('https://localhost:44303/Author/ArticleCollect',{art_id:id});
+                    if(data[0].state){
+                        aler(data[0].message);
+                        el.classList.add('active');
+                    }else{
+                        alert(data[0].message);
+                    }
+                    console.log("end")
+                    
+                })
+            })
+        }
+        //设置date
+        function SetDate(){
+            let date=new Date();
+            let month=date.getMonth()+1;
+            let day=date.getDate();
+            let infoDate=document.querySelectorAll('.info .date span');
+            infoDate[0].innerHTML=month<10?"0"+month:month;
+            infoDate[2].innerHTML=day;
+            console.log(date.getHours())
+        }
+        SetDate()
+        collect()
+    </script>
+</body>
+</html>

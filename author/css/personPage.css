@@ -1,0 +1,303 @@
+.person-header{
+    height: auto;
+    width: 80vw;
+    position: relative;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.person-header .bg-img>img{
+    width: 80vw;
+    height: 100px;
+}
+.person-header .info{
+    height: 100px;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+}
+.person-header .info .person-pic img{
+    width: 120px;
+    height: 120px;
+    transform: translateY(-50%);
+}
+.person-header .info>div:nth-of-type(2){
+    display: block;
+    padding: 6px 0px;
+    margin: 0px 10px;
+}
+.person-header .info>div:nth-of-type(2) p{
+    font-size: 28px;
+}
+.person-header .info>div:nth-of-type(2) span{
+    margin-right: 5px;
+    color: grey;
+}
+.person-header .info>div:nth-of-type(2) span em{
+    font-style: normal;
+    color: black;
+    font-weight: 600;
+}
+.person-header>div:nth-of-type(2)>a{
+    display: block;
+    padding: 6px 12px;
+    border:solid 1px skyblue;
+    border-radius: 5px;
+    margin-left: auto;
+}
+/* person-main */
+
+.person-main{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+/* section */
+.person-main section{
+    width: 56vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0px 20px;
+}
+.person-main section>ul{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: solid 1px #eee;
+}
+.person-main section>ul li{
+    height: 60px;
+    line-height: 60px;
+    display: block;
+    margin-right: 30px;
+}
+.person-main section>ul li.active{
+    border-bottom: solid 2px blue;
+}
+.person-main section>ul li span{
+    font-size: 12px;
+    margin: 0px 5px;
+}
+/* 观点 */
+
+.person-main .main-content{
+    width: 100%;
+}
+.person-main .main-content .viewpoint ul li .view-item{
+    display: flex;
+    border-top: solid 1px rgba(245, 246, 247, 0.4);
+    padding: 20px 0px;
+}
+.person-main .main-content .viewpoint ul>li:nth-child(1) .view-item{
+    border:none;
+}
+.person-main .main-content .viewpoint .person-main .main-content .viewpoint ul li .view-item a{
+    display: block;
+}
+.person-main .main-content .viewpoint ul li .view-item a>img{
+    height: 48px;
+    width: 48px;
+    margin: 0px 20px 0px 10px;
+    border-radius: 50%;
+}
+.person-main .main-content .viewpoint ul li .view-item .info{
+    width: 100%;
+}
+.person-main .main-content .viewpoint ul li .view-item .info h4{
+    height: 30px;
+}
+.person-main .main-content .viewpoint >ul li .view-item .info>div p{
+    margin: 10px 0px;
+    line-height: 24px;
+}
+.person-main .main-content .viewpoint >ul li .view-item .info>div p span{
+    color: blue;
+}
+.person-main .main-content .viewpoint ul li .view-item .info>div img{
+    width: 120px;
+    height: 160px;
+    margin: 10px 0px;
+}
+.person-main .main-content .viewpoint ul li .view-item .info>a{
+    border-left: solid 1px silver;
+}
+.person-main .main-content .viewpoint ul li .view-item .info>a span{
+    color: rgb(77, 77, 184);
+}
+.person-main .main-content .viewpoint ul li .view-item .info .info-tools{
+    display: flex;
+    
+}
+.person-main .main-content .viewpoint ul li .view-item .info .info-tools li{
+    height: 50px;
+    display: inline-block;
+    line-height: 50px;
+    color: grey;
+}
+/* 作品 */
+
+/* 关注 */
+.person-main .main-content .follow .follow-fillter{
+    padding: 20px 0px;
+    display: flex;
+}
+.person-main .main-content .follow .follow-fillter span{
+    margin-right: 20px;
+    display: block;
+    padding: 5px 12px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+.person-main .main-content .follow .follow-fillter span.active{
+    background-color: #3381e0cc;
+}
+/* 关注的话题 */
+
+.person-main .main-content .follow .follow-main .topic-follow ul{
+    display:block;
+    padding: 0px 30px;
+    height:auto;
+}
+.person-main .main-content .follow .follow-main .topic-follow ul li{
+    display:flex;
+    padding:20px 0px;
+    border-top: 1px solid #eee;
+    font-size: 15px;
+}
+.person-main .main-content .follow .follow-main .topic-follow ul li:nth-of-type(1){
+    
+    border-top: none;
+}
+.person-main .main-content .follow .follow-main .topic-follow ul li>i{
+    display:block;
+    color: #2475d8;
+    font-size: 20px;
+    line-height: 20px;
+    margin-right: 20px;
+}
+.person-main .main-content .follow .follow-main .topic-follow ul li .info{
+    
+    margin-right: 20px;
+}
+.person-main .main-content .follow .follow-main .topic-follow ul li .info h4{
+    font-size: 16px;
+}
+.person-main .main-content .follow .follow-main .topic-follow ul li .info p{
+    margin:10px 0px;
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.person-main .main-content .follow .follow-main .topic-follow ul li .info div{
+    color: grey;
+}
+/* 我关注 */
+.person-main .main-content .follow .follow-main .aur-follow ul{
+    display: block;
+    height:auto;
+}
+.person-main .main-content .follow .follow-main .aur-follow ul li{
+    display: flex;
+    align-items: center;
+    padding:20px 0px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+.person-main .main-content .follow .follow-main .aur-follow ul li img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.person-main .main-content .follow .follow-main .aur-follow ul li .info{
+    width: auto;
+    margin-right: auto;
+}
+.person-main .main-content .follow .follow-main .aur-follow ul li .info h3{
+    font-weight: 600;
+    font-size: 16px;
+}
+.person-main .main-content .follow .follow-main .aur-follow ul li .info p{
+    color: grey;
+    font-size: 14px;
+}
+.person-main .main-content .follow .follow-main .aur-follow ul li>a{
+    border: solid 1px grey;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+/* .history */
+
+.person-main .history{
+    height: auto;
+    width: 22vw;
+    border-radius: 5px;
+}
+.person-main .history .footprint{
+    height: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0px 30px;
+    margin-bottom: 20px;
+}
+.person-main .history h2{
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: solid 1px silver;
+}
+.person-main .history .footprint>div{
+    display: flex;
+    padding: 20px 0px;
+} 
+.person-main .history .footprint>div div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px 0px;
+}
+.person-main .history .footprint>div div h4{
+    display: block;
+    font-size: 22px;
+    padding: 0px 10px 10px;
+}
+.person-main .history .footprint>div div:nth-of-type(1){
+    border-right: solid 1px silver;
+}
+/* .achievement */
+
+.person-main .history .achievement{
+    height: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0px 30px;
+}
+.person-main .history .achievement ul{
+    display: flex;
+    flex-direction: column;
+}
+.person-main .history .achievement ul li{
+    width: 100%;
+    display: flex;
+    padding: 20px 0px;
+    line-height: 16px;
+    font-size: 16px;
+}
+.person-main .history .achievement ul li i{
+    margin-right: 10px;
+    color: grey;
+}
+.person-main .history .achievement ul li span{
+
+}

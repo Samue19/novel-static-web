@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>addChapter</title>
+  <link rel="stylesheet" href="./css/addChapter.css" />
+  <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body class="skin-light">
+  <div id="app">
+    <header>
+      <!-- left -->
+      <ul class="header-left">
+        <li>
+          <img src="" alt="" />
+        </li>
+        <li>{{novelName}}</li>
+        <li>第{{curIndex | numToHz}}章</li>
+        <li>{{title}}</li>
+      </ul>
+      <!-- right -->
+      <div class="header-right">
+        <a href="javascript:;" v-on:click="save">保存</a>
+        <a v-if="!isPubFlag" href="javascript:;" v-on:click="publish">发布</a>
+      </div>
+    </header>
+    <div class="content">
+      <div class="aside">
+        <!-- create -->
+        <div class="create" v-on:click="createChapter">
+          <i class="fa fa-plus-circle"></i>
+          新建章节
+        </div>
+        <!-- 章节 -->
+        <div class="chapter">
+          <!-- 草稿 -->
+          <div class="draft">
+            <div @click="toggleClass($event,drafShow),leftClickShow(0,drafShow)">
+              <i class="fa fa-angle-down"></i>
+              草稿箱 <span>(共{{draftNum}}章)</span>
+            </div>
+            <ul v-if="drafShow" style="display: block">
+              <li v-for="(ch, id) in draft" :key="id" :class="{active: curIndex == ch.id}"
+                v-on:click="addActive(ch.id)">
+                <div class="title">{{ch.title}}</div>
+                <div class="txt">{{ch.tips}}</div>
+              </li>
+            </ul>
+          </div>
+          <!-- 已发布 -->
+          <div class="released">
+            <div @click="toggleClass($event,releShow),leftClickShow(1,releShow)">
+              <i class="fa fa-angle-right"></i>
+              已发布 <span>(共{{releasedNum}}章)</span>
+            </div>
+            <ul v-if="releShow" style="display: block">
+              <li v-for="(ch, id) in released" :key="id" :class="{active: curIndex == ch.id}"
+                v-on:click="addActive(ch.id)">
+                <div class="title">{{ch.title}}</div>
+                <div class="txt">{{ch.tips}}</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="writing">
+        <div class="tools">
+          <ul>
+            <li><i class="fa fa-search"></i> 查找替换</li>
+          </ul>
+          <div class="write-time">
+            <i class="fa fa-check-circle"></i> 保存于 {{this.saveTime}}
+          </div>
+        </div>
+        <div id="chapter-body">
+          <div id="toolbar-container" class="toolbar"></div>
+          <div id="text-container" class="text"></div>
+          <div class="write-top">
+            <input type="text" v-model="title" placeholder="请输入章节号与章节名：示例：我的" />
+          </div>
+          <!-- <div class="write-bottom">
+              <i class="fa fa-plus-circle"></i>作家的话
+            </div> -->
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="num">本章字数:<span>{{fontCount}}</span></div>
+      <div>
+        <span v-on:click="changeBgd" class="changeBgd"><i class="fa fa-toggle-on"></i></span>
+        <span class="fullScreen" v-on:click="changeFullScreen"><i class="fa fa-arrows-alt"></i></span>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdn.staticfile.org/vue/2.6.9/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/wangeditor@latest/dist/wangEditor.min.js"></script>
+  <script src="https://cdn.staticfile.org/axios/0.27.2/axios.min.js"></script>
+  <script>
+    Vue.config.devtools = true;
+    let app = new Vue({
+      el: "#app",
+      data() {
+        return {
+          chapter: [{
+              id: 2,
+              title: "第一章 我",
+              tips: "2022-03-11 10:46 57字",
+              contents: "我们",
+              pubFlag: "未发布",
+            },
+            {
+              id: 1,
+              title: "第一章 我a",
+              tips: "2022-03-15 09:30 150字",
+              contents: "woa",
+              pubFlag: "已发布",
+            },
+          ],
+          drafShow: true,
+          releShow: false,
+          contents: "下一站", // 内容
+          editor: null, // 富文本编辑器
+          title: "你好，明天", // 章节名
+          isFullScreen: false,
+          bgdClass: ["skin-light", "skin-primary"],
+          curIndex: 2, // 当前章节
+          novelName: "峡谷乱杀记",
+          index: 0, // 系统章节序
+        };
+      },
+      methods: {
+        async init() {
+          let formData = new FormData();
+          formData.append('book_name', this.novelName)
+          
+          let data = await this.postCon('https://localhost:44303/Author/ChapterInfo', formData);
+          console.log(data);
+        },
+        leftClickShow(index, status) {
+          if (index == 0) {
+            this.drafShow = !status;
+          } else {
+            this.releShow = !status;
+          }
+        },
+        toggleClass(e, status) {
+          // console.log(e.target.children[0])
+          let i = e.target.children[0];
+          if (status) {
+            i.classList.remove("fa-angle-down");
+            i.classList.add("fa-angle-right");
+          } else {
+            i.classList.remove("fa-angle-right");
+            i.classList.add("fa-angle-down");
+          }
+        },
+        // 全屏
+        changeFullScreen(e) {
+          if (this.isFullScreen) {
+            document.exitFullscreen();
+            this.isFullScreen = false;
+          } else {
+            let screen = document.documentElement;
+            screen.requestFullscreen();
+            this.isFullScreen = true;
+          }
+        },
+        // 切换背景
+        changeBgd() {
+          console.log("1111");
+          this.$nextTick(() => {
+            let body = document.querySelector("body");
+            let i = Math.floor(Math.random() * this.bgdClass.length);
+            body.setAttribute("class", this.bgdClass[i]);
+          });
+        },
+        // 激活 章节列表项
+        addActive(id) {
+          //   console.log(id)
+          this.curIndex = id;
+          // 获取后台章节数据
+          this.chapter.forEach((val) => {
+            if (val.id == id) {
+              this.contents = val.contents;
+              this.editor.txt.html(val.contents);
+            }
+          });
+        },
+        // 章节保存
+        save() {
+          let date = new Date();
+          this.chapter.forEach((val) => {
+            if (val.id == this.curIndex) {
+              val.contents = this.contents;
+              val.title = this.title;
+              val.tips =
+                date.toLocaleDateString().replace(/\//gi, "-") +
+                " " +
+                date
+                .toLocaleTimeString()
+                .substring(0, date.toLocaleTimeString().length - 3) +
+                " " +
+                this.fontCount +
+                "字";
+            }
+          });
+          // 调接口保存
+          this.chapterSave()
+        },
+        // 章节发布
+        publish() {
+
+          this.chapter.forEach((val) => {
+            if (val.id === this.curIndex) {
+              if (val.pubFlag)
+                val.pubFlag = "已发布"
+            }
+          })
+          let formData = new FormData();
+          // string chapter_name, int chapter_rid, string datetime, string pubFlag
+          formData.append('chapter_name', this.title)
+          formData.append('chapter_rid', this.curIndex)
+          formData.append('datetime', new Date().toLocaleDateString())
+          formData.append('pubFlag', this.pubFlag)
+          this.SubmitInfo('https://localhost:44303/Author/ChapterPublish', formData)
+        },
+        // 章节创建
+        createChapter() {
+          if (!this.title || !this.contents) {
+            alert("请先完善当前章节！");
+          } else {
+            this.contents = "";
+            this.title = "无名章节";
+            this.index++;
+            this.curIndex = this.index;
+            this.editor.txt.clear();
+            let date = new Date();
+            tip =
+              date.toLocaleDateString().replace(/\//gi, "-") +
+              " " +
+              date
+              .toLocaleTimeString()
+              .substring(0, date.toLocaleTimeString().length - 3) +
+              " " +
+              this.fontCount +
+              "字";
+            this.chapter.unshift({
+              id: this.index,
+              title: this.title,
+              tips: tip,
+              pubFlag: '未发布',
+            });
+            console.log(this.chapter)
+            // string chapter_name, string book_name, int word_num, int chapter_rid, 
+            // string datetime, string content, string pubFlag
+            let formData = new FormData();
+            formData.append('chapter_name', this.title)
+            formData.append('chapter_rid', this.curIndex)
+            formData.append('word_num', this.fontCount)
+            formData.append('datetime', new Date().toLocaleDateString())
+            formData.append('content', this.contents)
+            formData.append('pubFlag', '未发布')
+            
+            this.SubmitInfo('https://localhost:44303/Author/AddChapter', formData)
+          }
+
+        },
+        // 保存章节到数据库
+        chapterSave() {
+          let formData = new FormData();
+          // string chapter_name, int word_num, int chapter_rid, string datetime, string content
+          formData.append('chapter_name', this.title)
+          formData.append('word_num', this.fontCount)
+          formData.append('chapter_rid', this.curIndex)
+          formData.append('datetime', new Date().toLocaleDateString())
+          formData.append('content', this.contents)
+
+          this.SubmitInfo('https://localhost:44303/Author/UpdateChapter', formData);
+        },
+        //数据提交 
+        async SubmitInfo(url, formData) {
+          let data = await this.postCon(url, formData);
+          console.log(data)
+          if (data.state) {
+            console.log(data)
+            //location.reload();
+          } else {
+            alert("保存失败");
+          }
+        },
+        //post传数据
+        postCon(url, params) {
+          return new Promise((resolve, reject) => {
+            axios.post(url, params).then((res) => {
+              resolve(res.data);
+            }).catch((err) => {
+              reject(err);
+            })
+          })
+        }
+      },
+      mounted() {
+        const E = window.wangEditor;
+        const editor = new E("#toolbar-container", "#text-container");
+        editor.config.focus = false;
+        editor.config.onchange = (newHtml) => {
+          this.contents = newHtml;
+        };
+        editor.config.zIndex = 1;
+        editor.config.placeholder = "在此输入正文";
+        //   editor.config.onblur = (newHtml) => {
+        //     this.contents = newHtml;
+        //   };
+        editor.create();
+        this.editor = editor;
+
+        // 获取小说数据
+        this.init()
+
+      },
+      computed: {
+        fontCount() {
+          let a = this.contents.replace(/<\/*p>/gi, "");
+          console.log(a);
+          return a.length;
+        },
+        draft() {
+          return this.chapter.filter((val, index, arr) => {
+            return val.pubFlag === "未发布";
+          });
+        },
+        released() {
+          return this.chapter.filter((val, index, arr) => {
+            return val.pubFlag === "已发布";
+          });
+        },
+        draftNum() {
+          return this.draft.length;
+        },
+        releasedNum() {
+          return this.released.length;
+        },
+        isPubFlag() {
+          return this.chapter.filter((val) => {
+            return val.id === this.curIndex;
+          })[0].pubFlag == '已发布'
+        },
+        saveTime() {
+          let t = this.chapter.filter((val) => {
+            return val.id === this.curIndex
+          })[0].tips.split(' ')
+          return t[0] + ' ' + t[1]
+        }
+      },
+      watch: {
+        contents(newValue, oldValue) {
+          // console.log("newValue: ", newValue);
+        },
+      },
+      filters: {
+        // 数字转汉字
+        numToHz: (val) => {
+          val = parseInt(val);
+          if (!val) return "";
+          // 小说最多99999章哈
+          let i = 0;
+          let res = "";
+          const hz = ["", "十", "百", "千", "万"];
+          const alp = [
+            "零",
+            "一",
+            "二",
+            "三",
+            "四",
+            "五",
+            "六",
+            "七",
+            "八",
+            "九",
+          ];
+          while (val) {
+            let t = val % 10;
+            val = Math.floor(val / 10);
+            res = t ? alp[t] + hz[i] + res : alp[t] + res;
+            i++;
+          }
+          res = res.replace(/零+/, "零");
+          // 删除末尾零
+          while (res.lastIndexOf("零") === res.length - 1)
+            res = res.substring(0, res.length - 1);
+          return res;
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>

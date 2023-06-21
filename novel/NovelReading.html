@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./Style.css"/>
+	</head>
+	<body onload="draw();">
+		<!-- header -->
+		<div id="header" class="w-100 px-5" style="height: 65px;">
+			<div class="row h-100">
+				<div class="col-1 pl-5 d-flex align-items-center justify-content-center h-100">
+					<!-- logo -->
+					<a href="" class="d-block pl-3">
+						<canvas id="canvas" width="60" height="60"></canvas>
+					</a>
+				</div>
+				<div class="col-5 d-flex align-items-center justify-content-center">
+					<ul class="nav d-flex" style="height: 50px;">
+						<li class="nav-link px-0">
+							<a href="Index.html" class="nav-link">首页</a>
+						</li>
+						<li class="nav-link px-0">
+							<a href="Classify.html" class="nav-link">男生</a>
+						</li>
+						<li class="nav-link px-0">
+							<a href="" class="nav-link">女生</a>
+						</li>
+						<li class="nav-link px-0">
+							<a href="" class="nav-link">包月</a>
+						</li>
+						<li class="nav-link px-0">
+							<a href="" class="nav-link">完本</a>
+						</li>
+						<li class="nav-link px-0">
+							<a href="" class="nav-link px-0">免费</a>
+						</li>
+						<li class="nav-link px-0">
+							<a href="" class="nav-link px-0">排行榜</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-3 d-flex align-items-center justify-content-center">
+					<div class="d-inline-block rounded clearfix pl-2" style="border: 1px solid #ced4da;width: 260px;height: 34px;">
+						<input type="text" class="border-0 d-inline-block" placeholder="你好!明天" style="width: 220px;height: 32px;">
+						<i class="fa fa-search fa-2x d-inline-block text-light float-right"></i>
+					</div>
+				</div>
+				<div class="col-3 d-flex align-items-center justify-content-center">
+					<div class="row" style="height: 32px;">
+						<div class="d-inline-block">
+							<span class="">Samuel</span>
+							<i class="fa fa-angle-down p-2" data-toggle="dropdown"></i>
+							<div class="dropdown-menu">
+								<a href="MyMainPage.html" class="dropdown-item">个人主页</a>
+								<a href="" class="dropdown-item">最近阅读</a>
+								<a href="" class="dropdown-item">我的账户</a>
+								<a href="" class="dropdown-item">系统通知</a>
+								<a href="" class="dropdown-item">退出登录</a>
+							</div>
+						</div>
+						<a href="" class="btn-sm bg-primary py-1">
+							<span class="">签到</span>
+						</a>
+						<em class="d-inline-block px-2">|</em>
+						<div href="" class="d-inline-block">
+							<span class="">我的书架</span>
+							<i class="fa fa-angle-down p-2" data-toggle="dropdown"></i>
+							<div class="dropdown-menu">
+								<a href="" class="dropdown-item">空</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- box-center -->
+		<div class="w-100">
+			<div class="row" style="background-color: rgba(189, 159, 133,1)">
+				<div class="col-2"></div>
+				<div class="col-8">
+					<nav aria-label="breadcrumb mb-0">
+						<small>
+						<ol class="breadcrumb mb-0" style="background-color: rgba(189, 159, 133, 1.0)">
+								<li>当前位置：</li>
+								<li class="breadcrumb-item">
+									<a href="">首页</a>
+								</li>
+								<li class="breadcrumb-item">
+									<a href="">玄幻小说</a>
+								</li>
+								<li class="breadcrumb-item">
+									<a href="">龙族1·火之晨曦</a>
+								</li>
+								<li class="breadcrumb-item">
+									<a href="">正文</a>
+								</li>
+						</ol>
+						</small>
+					</nav>
+					<!-- content -->
+					<div id="content" class="p-5 position-relative mb-4" style="background-color: #fae4cb;">
+						<!-- 缩进距离 -->
+						<div class="px-5">
+							<!-- 标签 -->
+							<div class="">
+								<i class="fa fa-bookmark text-secondary" style="position: absolute;right: 30px;top: 0px; font-size: 24px;"></i>
+								<span class="d-inline-block text-white text-center overflow-hidden" 
+								style="position: absolute;left: 20px;top: 6px;width: 17px;line-height: 17px;"></span>
+							</div>
+							<div class="py-3"></div>
+							<!-- title -->
+							<div class="text-center pb-1"><h2>序幕 白帝城</h2></div>
+							<!-- novelinfo -->
+							<div class="text-center pb-3">
+								<span>作者：</span>
+								<a href="">江南</a>
+								<span>&nbsp;&nbsp;|&nbsp;&nbsp;字数：1281</span>
+								<span>&nbsp;&nbsp;|&nbsp;&nbsp;更新时间：2017-10-12 11:21:01</span>
+							</div>
+							<div class="border-bottom border-dark"></div>
+							<!-- content -->
+							<div class="pt-4" style="text-indent: 2rem;">
+								<p>“哥哥……”有人在黑暗里轻声地呼喊。</p>
+								<p>真烦！谁家的小孩跑丢了？</p>
+								<p>“哥哥。”孩子又喊。</p>
+								<p>真烦真烦真烦！哥哥？这里没有！</p>
+								<p>“哥哥……那我走啦……”孩子低声说，声音渐渐远去。</p>
+								<p>他心里忽然有点不忍心，那个渐渐远去的声音，透着一股孤单，让人想到那个孩子远去的背影，像只被抛弃的小猎犬。</p>
+								<p>“好啦好啦好啦！你家住哪街哪号哪门？你那个靠不住的哥哥叫什么名字？我送你回家！”他翻身坐了起来。</p>
+								<p>他在阳光中席地而坐，一袭白衣皎洁如月，所见的是一朵白色的茶花在粗瓷瓶中盛放，隔着那支花，白衣的孩子手持一管墨笔伏案书写，一笔一划。</p>
+								<p>“喂，你没走啊？你耍我的吧？”他想说，却没有说。</p>
+								<p>他很自然地做了一件事，桌上有盘青翠欲滴的葡萄，他从里面摘下一小串，隔着桌子递给那个孩子。</p>
+								<p>孩子抬起头来，眼睛里闪动着惊慌，像是警觉的幼兽，“哥哥，外面有很多人。”</p>
+								<p>鬼扯吧？这么安静的。他想。</p>
+								<p>可是自然而然地，他说了另一句话，“也许会死吧？但是，康斯坦丁，不要害怕。”</p>
+								<p>“不害怕，和哥哥在一起，不害怕……可为什么……不吃掉我呢？吃掉我，什么样的牢笼哥哥都能冲破。”孩子认真地说。</p>
+								<p>吃掉……你？虽然你长得很白嫩，但是绝不代表你比汉堡好吃啊，我中午才吃了一个汉堡，一点不饿。他想。</p>
+								<p>“你是很好的食物，可那样就太孤单了，几千年里，只有你和我在一起。”再一次，他说出了言不由衷的话。</p>
+								<p>“可是死真的让人很难过，像是被封在一个黑盒子里，永远永远，漆黑漆黑……像是在黑夜里摸索，可伸出的手，永远触不到东西……”</p>
+								<p>“所谓弃族的命运，就是要穿越荒原，再次竖起战旗，返回故乡。死不可怕，只是一场长眠。
+									在我可以吞噬这个世界之前，与其孤独跋涉，不如安然沉睡。我们仍会醒来。”
+									真不敢相信，这么拉风的台词，居然会出于他的嘴里。</p>
+								<p>“哥哥……竖起战旗，吞噬世界的时候，你会吃掉我么？”孩子看着他，澄澈的瞳子里闪动着……期待。</p>
+								<p>见鬼！这是什么“我们是相亲相爱的食人族一家”的话剧桥段么？可你们的家庭伦理真的好奇怪！</p>
+								<p>“会的，那样你就将和我一起，君临世界！”可他轻轻地点头，声音里透着冷硬的威严。</p>
+								<p>孩子从水壶里倒了一杯水，递给了他，他茫然地喝了下去。</p>
+								<p>“我要走了，哥哥，再见。”孩子站了起来。</p>
+								<p>他想说我不是你哥哥你认错人了，但他也只是随口说，“再见，自己小心，人类，是不能相信。”</p>
+								<p>又是句奇怪的台词，没头没脑的。</p>
+								<p>孩子出门去了，在背后带上了门。他听着孩子的脚步声越来越远，最后完全消失了。</p>
+								<p>他忽然有点害怕，他想自己真是昏头了，那么小的一个孩子，放他自己去街上走，给人拐跑了怎么办？
+									不知道他得走多远的路才能找到哥哥。他变得坐立不安，终于忍不住的时候，他起身往门口跑去。</p>
+								<p>他推开了门，炽烈的光照在他的白衣上，不是阳光，而是火光。燎天的烈焰中，城市在哭嚎，
+									焦黑的人形在火中奔跑，成千上万的箭从天空里坠落，巨大的牌匾燃烧着、翻转着坠落，上面是“白帝”两个字，简直是地狱。</p>
+								<p>城市的正中央，立着一根高杆，孩子被挂在高杆顶上，闭着眼睛，整个城市的火焰，都在灼烧他。</p>
+								<p>像是一场盛大的献祭。</p>
+								<p>心里真痛啊，真像是有把刀在割。什么重要的人就此失去了，因为他犯了错误。</p>
+								<p>他忽然想起一件事来，确实没错，他就是个孩子的哥哥。</p>
+								<p>“康斯……坦丁。”他喊出了那个名字。</p>
+								<p>他猛地坐起，在下午的阳光中睁开眼睛，呼吸急促，全身都是冷汗，外面是高架轻轨经过的噪音。</p>
+								<p>他忽然觉得这声音那么悦耳，提醒他梦中的一切都是假的，他所在的，只是普普通通的人世。</p>
+							</div>
+							<div class="py-3"></div>
+							<!-- control -->
+							<div class="row py-4">
+								<a href="" class="btn col-3" style="background-color: rgba(0,0,0,0.2);">上一章</a>
+								<a href="" class="btn col-3 mx-2" style="background-color: rgba(0,0,0,0.2);">目录</a>
+								<a href="" class="btn flex-fill" style="background-color: rgba(0,0,0,0.2);">下一章</a>
+							</div>
+							<!-- 章节评论 -->
+							<div>
+								<div class="py-2 border-bottom border-dark-50 clearfix">
+									<h4 class="d-inline-block">章节评论</h4>
+									<a href="" class="py-0 float-right d-inline-block btn btn-outline-danger">发表评论</a>
+								</div>
+								<div>
+									<ul class="nav text-secondary">
+										<li class="d-flex pt-4 w-100 border-bottom border-dark-50 clearfix">
+											<div class="col-1">
+												<a href="" class="d-block position-absolute">
+													<img src="image/你的名字.jpg" alt="" style="width: 50px;height: 50px;border-radius: 50%;">
+													<i class="fa fa-vimeo text-danger" style="position: absolute;bottom: 0;right: -5px;"><small>1</small></i>
+												</a>
+											</div>
+											<div class="col-11 pb-3 pl-4">
+												<div class="mb-2">Samuel</div>
+												<a href="" class="overflow-hidden my-2" style="display: -webkit-box; -webkit-line-clamp: 3;
+												-webkit-box-orient: vertical;">有趣</a>
+												<div class="clearfix">
+													<div class="float-left">2020-12-12 20:20</div>
+													<div class=" float-right">
+														<a href=""><i class="fa fa-thumbs-o-up"></i>&nbsp;1&nbsp;</a>
+														<a href=""><i class="fa fa-commenting-o"></i>&nbsp;2&nbsp;</a>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="d-flex pt-4 w-100 border-bottom border-dark-50 clearfix">
+											<div class="col-1">
+												<a href="" class="d-block position-absolute">
+													<img src="image/你的名字.jpg" alt="" style="width: 50px;height: 50px;border-radius: 50%;">
+													<i class="fa fa-vimeo text-danger" style="position: absolute;bottom: 0;right: -5px;"><small>1</small></i>
+												</a>
+											</div>
+											<div class="col-11 pb-3 pl-4">
+												<div class="mb-2">Samuel</div>
+												<a href="" class="my-2 overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;">有趣</a>
+												<div class="clearfix">
+													<div class="float-left">2020-12-12 20:20</div>
+													<div class=" float-right">
+														<a href=""><i class="fa fa-thumbs-o-up"></i>&nbsp;1&nbsp;</a>
+														<a href=""><i class="fa fa-commenting-o"></i>&nbsp;2&nbsp;</a>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="d-flex pt-4 w-100 border-bottom border-dark-50 clearfix">
+											<div class="col-1">
+												<a href="" class="d-block position-absolute">
+													<img src="image/你的名字.jpg" alt="" style="width: 50px;height: 50px;border-radius: 50%;">
+													<i class="fa fa-vimeo text-danger" style="position: absolute;bottom: 0;right: -5px;"><small>1</small></i>
+												</a>
+											</div>
+											<div class="col-11 pb-3 pl-4">
+												<div class="mb-2">Samuel</div>
+												<a href="" class="overflow-hidden my-2" style="display: -webkit-box; -webkit-line-clamp: 3;
+												-webkit-box-orient: vertical;">
+												有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣
+												有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣
+												有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣
+												有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣有趣
+												</a>
+												<div class="clearfix">
+													<div class="float-left">2020-12-12 20:20</div>
+													<div class=" float-right">
+														<a href=""><i class="fa fa-thumbs-o-up"></i>&nbsp;1&nbsp;</a>
+														<a href=""><i class="fa fa-commenting-o"></i>&nbsp;2&nbsp;</a>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="mt-3 mb-4 text-center">
+									<a href="">查看更多></a>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-2"></div>
+			</div>
+			<!-- 设置导航 -->
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-5">
+					<!-- left -->
+					<div id="left" class="row clearfix" style="position: fixed;top: 100px;">
+						<div class="position-absolute">
+							<ul class="flex-column nav text-center">
+								<li class="d-block py-2 px-3 mb-1 rounded" style="background-color: rgba(0,0,0,0.1);">
+									<a href="#Catalogue" class="d-block text-black-50" data-toggle="tab">
+										<i class="fa fa-list-ul fa-2x d-block"></i>
+										目录
+									</a>
+								</li>
+								<li class="d-block py-2 px-3 mb-1 rounded" style="background-color: rgba(0,0,0,0.1);">
+									<a href="" class="d-block text-black-50">
+										<i class="fa fa-book fa-2x d-block"></i>
+										书架
+									</a>
+								</li>
+								<li class="d-block py-2 px-3 mb-1 rounded" style="background-color: rgba(0,0,0,0.1);">
+									<a href="" class="d-block text-black-50">
+										<i class="fa fa-2x fa-file-text-o d-block"></i>
+										书页
+									</a>
+								</li>
+								<li class="d-block py-2 px-3 mb-1 rounded" style="background-color: rgba(0,0,0,0.1);">
+									<a href="#PageSet" class="d-block text-black-50 show" data-toggle="tab">
+										<i class="fa fa-cog fa-2x d-block"></i>
+										设置
+									</a>
+								</li>
+							</ul>
+							
+						</div>
+						<div class="tab-content bg-white overflow-hidden" style="position: absolute;left: 70px; top: 0px;">
+							<div id="Catalogue" class="tab-pane rounded p-4" style="background-color: rgba(0,0,0,0.1);width: 640px; height: 400px;">
+								<div class="row mb-2">
+									<div class="col-11 clearfix">
+										<a href="" class="border-bottom border-danger mr-1">目录</a>
+										|
+										<a href="" class="border-bottom border-danger ml-1">书签</a>
+										<a href="" class="text-center float-right">倒序排列</a>
+									</div>
+									<div class="col-1">
+										<a href="#" class="d-inline-block">
+											<span id="Cancel2">&times;</span>
+										</a>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-11 pr-0 mr-3" style="overflow-y: auto; height: 300px;">
+										<dl class="nav my-3">
+											<dt class="bg-secondary w-100 py-1 pl-4">
+												<a href="" class="">默认卷</a>
+											</dt>
+											<dd class="nav-item col-6">
+												<a href="" class="nav-link border-bottom border-light">序幕 白帝城</a>
+											</dd>
+											<dd class="nav-item col-6">
+												<a href="" class="nav-link border-bottom border-light">第一幕 卡塞尔之门</a>
+											</dd>
+											<dd class="nav-item col-6">
+												<a href="" class="nav-link border-bottom border-light">第二幕 神秘的学院</a>
+											</dd>
+											<dd class="nav-item col-6">
+												<a href="" class="nav-link border-bottom border-light">第三幕 自由一日</a>
+											</dd>
+											<dd class="nav-item col-6">
+												<a href="" class="nav-link border-bottom border-light">第四幕 考试之前</a>
+											</dd>
+											<dd class="nav-item col-6">
+												<a href="" class="nav-link border-bottom border-light">第五幕 青铜城</a>
+											</dd>
+											<dd class="nav-item col-6">
+												<a href="" class="nav-link border-bottom border-light">第六幕 龙影</a>
+											</dd>
+											<dd class="nav-item col-6">
+												<a href="" class="nav-link border-bottom border-light">第七幕 星与花</a>
+											</dd>
+											<dd class="nav-item col-6">
+												<a href="" class="nav-link border-bottom border-light">第八幕 兄弟</a>
+											</dd>
+											<dd class="nav-item col-6">
+												<a href="" class="nav-link border-bottom border-light">第九幕 龙墓</a>
+											</dd>
+											<dd class="nav-item col-6">
+												<a href="" class="nav-link border-bottom border-light">第十幕 龙墓</a>
+											</dd>
+											<dd class="nav-item col-6">
+												<a href="" class="nav-link border-bottom border-light">第十一幕 七宗罪</a>
+											</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+							<div id="PageSet" class="tab-pane rounded p-4" style="background-color: rgba(0,0,0,0.1); width: 480px;">
+								<div class="border-bottom py-2 border-light mb-3">
+									<h4 class="d-inline-block">设置</h4>
+									<a id="Cancel1" href="#" class="d-inline-block float-right">
+										<span class="Cancel1">&times;</span>
+									</a>
+								</div>
+								<div class="row mb-3">
+									<div class="col-2 py-2 px-2 h-100 text-center"><small>阅读背景</small></div>
+									<div class="col-10 row">
+										<div class="col-3 d-flex align-items-center justify-content-center">
+											<a href="" class="rounded-circle bg-success p-3 border border-light"></a>
+										</div>
+										<div class="col-3 d-flex align-items-center justify-content-center">
+											<a href="" class="rounded-circle bg-info p-3 border border-light"></a>
+										</div>
+										<div class="col-3 d-flex align-items-center justify-content-center">
+											<a href="" class="rounded-circle bg-danger p-3 border border-light"></a>
+										</div>
+										<div class="col-3 d-flex align-items-center justify-content-center">
+											<a href="" class="rounded-circle bg-dark p-3 border border-light"></a>
+										</div>
+									</div>
+								</div>
+								<div class="row mb-3">
+									<div class="col-2 py-2 px-2 text-center h-100"><small>正文字体</small></div>
+									<div class="col-10 row text-center">
+										<div class="col-3 px-1">
+											<a href="" class="btn rounded border border-light w-100">
+												<small>宋体</small>
+											</a>
+										</div>
+										<div class="col-3 px-1">
+											<a href="" class="btn rounded border border-light w-100">
+												<small>黑体</small>
+											</a>
+										</div>
+										<div class="col-3 px-1">
+											<a href="" class="btn rounded border border-light w-100">
+												<small>微软雅黑</small>
+											</a>
+										</div>
+										<div class="col-3 px-1">
+											<a href="" class="btn rounded border border-light w-100">
+												<small>楷体</small>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="row mb-3">
+									<div class="col-2 py-2 px-2 text-center h-100"><small>字体大小</small></div>
+									<div class="col-7 row pl-3">
+										<div class="mx-1 row text-center d-flex align-content-center justify-content-center border border-light">
+											<div class="col-3 py-2">
+												<a href="" class="w-100">
+													A-
+												</a>
+											</div>
+											<div class="py-2">|</div>
+											<div class="col-3 py-2">
+												11
+											</div>
+											<div class="py-2">|</div>
+											<div class="col-3 py-2">
+												<a href="" class="w-100">
+													A+
+												</a>
+											</div>
+											
+										</div>
+									</div>
+									<div class="col-3"></div>
+								</div>
+								<div class="row mb-3">
+									<div class="col-2 py-2 px-2 text-center h-100"><small>页面宽度</small></div>
+									<div class="col-10 row text-center">
+										<div class="col-3 px-1">
+											<a href="" class="btn rounded border border-light w-100">
+												<small>640</small>
+											</a>
+										</div>
+										<div class="col-3 px-1">
+											<a href="" class="btn rounded border border-light w-100">
+												<small>800</small>
+											</a>
+										</div>
+										<div class="col-3 px-1">
+											<a href="" class="btn rounded border border-light w-100">
+												<small>默认</small>
+											</a>
+										</div>
+										<div class="col-3 px-1">
+											<a href="" class="btn rounded border border-light w-100">
+												<small>1280</small>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="row mb-3">
+									<div class="col-2 py-2 px-2 text-center h-100"></div>
+									<div class="col-10 row text-center">
+										<div class="col-6 px-1">
+											<a href="" class="btn btn-danger rounded border border-light w-75">
+												<small>保存设置</small>
+											</a>
+										</div>
+										<div class="col-6 px-1">
+											<a href="" class="btn btn rounded border border-light w-75">
+												<small>恢复默认</small>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+				</div>
+				<div class="col-1">
+					<!-- right -->
+					<div id="right" style="position: fixed;bottom: 0px;">
+						<ul class="flex-column nav  text-center">
+							<li class="d-block py-2 px-3 mb-1 rounded" style="background-color: rgba(0,0,0,0.1);">
+								<a href="" class="d-block text-black-50">
+									<i class="fa fa-angle-up fa-2x d-block"></i>
+									顶部
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+		</div>
+		<script src="./js/jquery/jquery-3.5.1.slim.min.js jquery-3.5.1.slim.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/bootstrap/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./Js.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(window).scroll(function(){
+				var wintotop=$(document).scrollTop();
+				var winhei=$(window).height();
+				if(wintotop < 100){
+					var lefttop=100-wintotop;
+					$("#left").css("top",lefttop);
+				}
+				else{
+					$("#left").css("top","0px");
+					if( $(document.body).height()-wintotop < 620){
+						$("#right").css("bottom","24px");
+					}
+					else{
+						$("#right").css("bottom","0px");
+					}
+				}
+			});
+			$("#Cancel1").click(function(){
+				$("#PageSet").css("display","none");
+			});
+			$("#Cancel2").click(function(){
+				$("#Catalogue").css("display","none");
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    background-color: #f5f6f7;
+    background: url("https://img-qn-4.51miz.com/preview/element/00/01/10/95/E-1109553-35EEE2B6.jpg!/quality/90/unsharp/true/compress/true/format/jpg/fh/400") no-repeat;
+    background-size: 100% 100%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+button{
+    outline: none;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-start{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.flex-grid{
+    display: grid;
+    grid-template:repeat(2,1fr)/repeat(3,1fr);
+    gap:16px
+}
+.box-shadow-sm{
+    box-shadow: 1px 2px 3px #eee;
+}
+/* header */
+header{
+    width: 100vw;
+    height: 64px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 99;
+}
+header>div{
+    width: 80vw;
+    height: 100%;
+    margin: 0 auto;
+}
+header .left .logo a{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+header .left .logo a img{
+    width:60px;
+    height:60px;
+    margin-right:10px;
+}
+header .left .logo a span{
+    font-size: 24px;
+}
+header .left ul li{
+    display: block;
+    width: 80px;
+    text-align: center;
+}
+header .left ul li:nth-child(1){
+    border-right: solid 2px #eee;
+}
+
+/* content */
+.content{
+    width: 80vw;
+    margin: 60px auto;
+    padding: 20px 0;
+    position:relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content .info{
+    height: 360px;
+    width:500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content .info span{
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 2px -3px 2px grey;
+}
+.content .login{
+    width: 340px;
+    height: auto;
+    background-color: #fff;
+    border-radius:5px;
+    padding: 20px 30px;
+}
+.content .login form ul{
+    display: block;
+    width: 100%;
+}
+.content .login form ul li{
+    width:100%;
+    height:40px;
+    display: flex;
+    align-items:center;
+    border: solid 1px #eee;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.content .login form ul li div{
+    width:40px;
+    display: flex;
+    justify-content: center;
+}
+.content .login form ul li div i{
+    font-size: 20px;
+    line-height: 20px;
+    color: grey;
+}
+.content .login form ul li input{
+    height:100%;
+    width:100%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+.content .login form a{
+    display: block;
+    padding:10px 0px;
+    text-align: center;
+    width:100%;
+    background-color: #2475d8;
+    border-radius: 5px;
+    margin: 0px auto;
+}
+.content .login form .auto-login{
+    height: 40px;
+    padding: 10px;
+    position: relative;
+}
+/* 设置复选框 */
+.content .login form .auto-login label{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 13px;
+    left: 0px;
+    border: solid 1px blue;
+}
+.content .login form .auto-login label::before{
+    content: '';
+    opacity: 0;
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    top: 3px;
+    left: 3px;
+    border: 2px solid #575cff;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+}
+.content .login form .auto-login input[type=checkbox]:checked + label::before{
+    opacity: 1;
+}
+.content .login form .auto-login input[type=checkbox]{
+    visibility: hidden;
+    width: 18px;
+    height: 18px;
+}
+.content .login form .auto-login span{
+    font-size: 16px;
+    line-height: 18px;
+}
+/* footer */
+footer>div{
+    width: 80vw;
+    border-top: solid 1px silver;
+    padding: 30px;
+}

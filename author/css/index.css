@@ -1,0 +1,240 @@
+
+.swiper{
+    height: 200px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    
+}
+.swiper-container{
+    height: 100%;
+    width: 100%;
+}
+.swiper-container img{
+    width: 100%;
+}
+.topic{
+    height:360px;
+    width: 100%;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.topic>div{
+    height: 60px;
+}
+.topic ul{
+    height: 300px;
+    padding-bottom: 20px;
+}
+.topic ul li{
+    border: solid 1px #eee;
+}
+.topic ul li a{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 10px;
+    display: block;
+}
+.topic ul li a:before{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #C2DBF9;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.topic ul li a h4{
+    height: 40px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.topic ul li a p{
+    font-size: 12px;
+    line-height: 20px;
+    color: grey;
+}
+.topic ul li a button{
+    border: solid 1px silver;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 1px 5px;
+    position:absolute;
+    bottom: 20px;
+}
+/* 推荐文章 */
+.article{
+    padding: 0 20px;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.article>div:nth-of-type(1){
+    border-bottom: solid 1px silver;
+    height: 60px;
+}
+.article>div:nth-of-type(2){
+    padding: 20px;
+    height: 80px;
+}
+.article>div:nth-of-type(2) a{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    line-height: 40px;
+    font-size: 16px;
+    color: grey;
+    text-align: center;
+    border: solid 1px silver;
+    border-radius: 5px;
+    
+}
+.article ul{
+    display: block;
+    height: 600px;
+}
+.article ul li{
+    padding: 20px 0;
+    height: 200px;
+    border-top: solid 1px silver;
+}
+.article ul li:nth-child(1){
+    border: none;
+}
+.article li>a{
+    height: 100%;
+    width: 120px;
+    padding: 0px 20px 0px 0px;
+    
+}
+.article li img{
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    
+}
+.article li .info{
+    height: 100%;
+}
+.article li .info>div:nth-of-type(1){
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    color: grey;
+}
+.article li .info h3{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.article li .info p{
+    line-height: 22px;
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.article li .info>div:last-child,.article li .info>div:last-child i{
+    color: grey;
+}
+.article li .info>div:last-child i.active{
+    color:red;
+}
+/* right */
+.content .right .user{
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 200px;
+}
+.content .right .info{
+    height: 100px;
+    width: 100%;
+}
+
+.right .info div.hello{
+    width: 100%;
+    height: 100%;
+    color: #7a7a7a;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 5px;
+}
+.right .info div h3{
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 10px 0px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.right .info p{
+    height: 44px;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: grey;
+}
+.right .info .date {
+    align-items: flex-start;
+    height: 100%;
+}
+.right .date span{
+    display: block;
+}
+.right button{
+    width: 100%;
+    height: 40px;
+    background-color: skyblue;
+    border: none;
+    border-radius: 5px;
+}
+/* version */
+.version{
+    margin: 10px 0px;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 240px;
+    width: 100%;
+    padding: 0px 20px;
+}
+.version>div:nth-child(1){
+    
+    border-bottom: solid 1px silver;
+    height: 60px;
+}
+.version .version-item{
+    height: 120px;
+    width: 100%;
+    padding: 10px 0px;
+}
+.version .version-item h3{
+    height: 30px;
+    line-height: 16px;
+    font-size: 16px;
+}
+.version .version-item span{
+    font-size: 14px;
+    margin: 6px 0px;
+}
+.version .version-item p{
+    line-height: 25px;
+}

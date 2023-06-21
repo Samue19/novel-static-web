@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashborad</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="flex-between">
+            <!-- left -->
+            <div class="left flex-center">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="" alt="">
+                        <span>作家专区</span>
+                    </a>
+                </div>
+                <!-- nav -->
+                <ul class="flex-center">
+                    <li>
+                        <a href="./index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="./article.html">文章</a>
+                    </li>
+                    <li>
+                        <a href="./spcolumn.html">专栏</a>
+                    </li>
+                    <li>
+                        <a href="./viewpoint.html">话题</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- right -->
+            <div class="right">
+                <!-- login -->
+                <div class="login flex-between" style="display:none">
+                    <!-- working -->
+                    <div class="working" index='0'>
+                        <a href="./dashboard.html">
+                            <i class="fa fa-desktop"></i>
+                        </a>
+                        <div>123</div>
+                    </div>
+                    <!-- tips -->
+                    <div class="tips" index='1'>
+                        <a href="">
+                            <i class="fa fa-bell-o"></i>
+                        </a>
+                        <div>123</div>
+                    </div>
+                    <!-- user -->
+                    <div class="user" index='2'>
+                        <a href="./personPage.html">
+                            <i class="fa fa-user-circle"></i>
+                        </a>
+                        <div >
+                            <!-- level-info -->
+                            <div class="level-info">
+                                <h3>
+                                    <a href="./personPage.html">
+                                        原创作家<span>普通</span>
+                                    </a>
+                                </h3>
+                            </div>
+                            <!-- menu-list -->
+                            <div class="menu-list">
+                                <dl>
+                                    <dd>
+                                        <a href="">作品管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">立即写作</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dd>
+                                        <a href="">我收藏的文章</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">我关注的专栏</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dd>
+                                        <a href="">个人资料</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">修改密码</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">退出登录</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- no-login -->
+                <div class="no-login" style="display: flex">
+                    <a href="">登录</a>
+                    <a href="">成为作家</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- content -->
+    <div class="content flex-center">
+        <!-- aside -->
+        <div class="aside">
+            <a href="javascript:;" index="0">
+                <i class="fa fa-bar-chart"></i>
+                <span>工作台</span>
+            </a>
+            <a href="javascript:;" index='1'>
+                <i class="fa fa-book"></i>
+                <span>作品管理</span>
+            </a>
+            <a href="#" index='2'>
+                <i class="fa fa-bar-chart"></i>
+                <span>数据中心</span>
+            </a>
+            <a href="#" index='3'>
+                <i class="fa fa-commenting-o"></i>
+                <span>消息通知</span>
+            </a>
+            <a href="#" index='4'>
+                <i class="fa fa-user-o"></i>
+                <span>作者信息</span>
+            </a>
+            <a href="#" index='5' class="active">
+                <i class="fa fa-book"></i>
+                <span>作品设置</span>
+            </a>
+            <a href="#" index='6'>
+                <i class="fa fa-book"></i>
+                <span>新建作品</span>
+            </a>
+        </div>
+        <div class="main-content">
+            <!-- 工作台 -->
+            <div id="work-splace" style="display: none;">
+                <!-- 作家信息 -->
+                <div class="user-info">
+                    <div>
+                        <h2>个人信息</h2>
+                    </div>
+                    <!-- user-info -->
+                    <div>
+                        <!-- left -->
+                        <div class="left">
+                            <img src="https://ccstatic-1252317822.file.myqcloud.com/writer/p1/contentv2/photo_default.png" alt="">
+                            <div>
+                                <span>原创作家</span>
+                                <em>普通</em>
+                            </div>
+                        </div>
+                        <!-- right -->
+                        <div class="right">
+                            <ul>
+                                <li>
+                                    <span><strong>0</strong></span>
+                                    <small>创作天数</small>
+                                </li>
+                                <li>
+                                    <span><strong>0</strong></span>
+                                    <small>累计字数</small>
+                                </li>
+                                <li>
+                                    <span><strong>0</strong></span>
+                                    <small>作品粉丝</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 作品管理 -->
+                <div class="nov-mang">
+                    <div class="flex-between">
+                        <h2>作品管理</h2>
+                        <div>
+                            <span>更多</span>
+                            >
+                        </div>
+                    </div>
+                    <div>
+                        您还没有作品
+                        <span>快去创作您的第一部作品吧</span>
+                        <a href="">新建作品</a>
+                    </div>
+                </div>
+                <!-- 推荐观点 -->
+                <div class="viewpoint box-shadow-sm">
+                    <!-- nav -->
+                    <div class="flex-between">
+                        <h2>作品管理</h2>
+                        <div>
+                            <span>更多</span>
+                            >
+                        </div>
+                    </div>
+                    <!-- view-list -->
+                    <div class="view-list">
+                        <ul>
+                            <li>
+                                <!-- view-item -->
+                                <div class="view-item">
+                                    <a href="">
+                                        <img src="https://ccstatic-1252317822.file.myqcloud.com/portraitimg/2021-04-17/607aaa2ce4ffe.jpeg" alt="">
+                                    </a>
+                                    <div class="info">
+                                        <h4><a href="">简吴</a></h4>
+                                        <div>
+                                            <p>
+                                                那个人是
+                                                <span>[全文]</span>
+                                                <span>[折叠全文]</span>
+                                            </p>
+                                            <img src="https://ccstatic-1252317822.file.myqcloud.com//livemsg/19292724608886401/1621991931368.jpeg" alt="">
+                                        </div>
+                                        <a href="">
+                                            来自话题：
+                                            <span>小说中的黄金三章真的重要吗？</span>
+                                        </a>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                            <li>
+                                <!-- view-item -->
+                                <div class="view-item">
+                                    <a href="">
+                                        <img src="https://ccstatic-1252317822.file.myqcloud.com/portraitimg/2021-04-17/607aaa2ce4ffe.jpeg" alt="">
+                                    </a>
+                                    <div class="info">
+                                        <h4><a href="">简吴</a></h4>
+                                        <div>
+                                            <p>
+                                                那个人是
+                                                <span>[全文]</span>
+                                                <span>[折叠全文]</span>
+                                            </p>
+                                            <img src="https://ccstatic-1252317822.file.myqcloud.com//livemsg/19292724608886401/1621991931368.jpeg" alt="">
+                                        </div>
+                                        <a href="">
+                                            来自话题：
+                                            <span>小说中的黄金三章真的重要吗？</span>
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 码字日历 -->
+            </div>
+            <!-- 作品管理 -->
+            <div id="nov-managent" style="display: none;">
+                <!-- 我的作品 -->
+                <div class="my-novel">
+                    <div class="flex-between">
+                        <h2>我的作品</h2>
+                        <span>
+                            <i class="fa fa-plus-circle"></i>
+                            新建作品
+                        </span>
+                    </div>
+                    <ul>
+                        <li>
+                            <img src="https://ccstatic-1252317822.image.myqcloud.com/bookcoverimg/2021-07-02/default_264ea1a27b7bebe66ed71374908e6de2.png?imageMogr2/thumbnail/150x200!" alt="">
+                            <div class="prod">
+                                <div class="title">
+                                    <h3>峡谷乱杀记</h3>
+                                    <label>新建</label>
+                                </div>
+                                <p class="chapter">第一章 泉水初识凯爹</p>
+                                <p class="update">无最新章节 | 2022-03-11 10:46 更新</p>
+                                <p class="subscribe">111 人订阅本章</p>
+                                <span class="collect">
+                                    收藏<span> 0 </span>
+                                </span>
+                                <div class="btn-groups">
+                                    <a href="javascript:;">作品设置</a>
+                                    <a href="javascript:;">去写作</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 数据中心 -->
+            <div style="display: none;">数据中心</div>
+            <!-- 消息通知 -->
+            <div style="display: none;">消息通知</div>
+            <!-- 作者信息 -->
+            <div id="userInfo" style="display: none;">
+                <div>
+                    <h3>个人信息</h3>
+                </div>
+                <form action="">
+                    <div>
+                        <label>头像</label>
+                        <div class="userImgUpload">
+                            <div class="change">
+                                <img src="https://ccstatic-1252317822.file.myqcloud.com/portraitimg/2021-06-28/6e338fab690c77db811ef99f2fc833ees4TuDv5Y7sud4sY.jpg" data-url="https://ccstatic-1252317822.file.myqcloud.com/portraitimg/2021-06-28/6e338fab690c77db811ef99f2fc833ees4TuDv5Y7sud4sY.jpg" alt="">
+                                <label class="mask" for="userUpload">
+                                    <i class="fa fa-upload"></i>
+                                    <span>上传头像</span>
+                                </label>
+                                <input id="userUpload" type="file" style="display: none;" title="上传头像">
+                            </div>
+                            <div class="msg"></div>
+                        </div>
+                        
+                    </div>
+                    <ul>
+                        <li class="change">
+                            <label for="">笔名</label>
+                            <input type="text" name="penname" value="1" title="笔名" data-val="2">
+                        </li>
+                        <li>
+                            <label for="">作家身份</label>
+                            <input type="text" name="identity" value="普通作家">
+                        </li>
+                        <li class="change">
+                            <label for="">性别</label>
+                            <div>
+                                <input type="radio" name="sex" value="男" title="男">男
+                                <input type="radio" name="sex" value="女" title="女">女
+                            </div>
+                        </li>
+                        <li class="change">
+                            <label for="">真实姓名</label>
+                            <input type="text" name="real_name" value="真实姓名" title="真实姓名" data-val="2">
+                        </li>
+                        <li class="change">
+                            <label for="">教育水平</label>
+                            <input type="text" name="edu_lever" value="教育水平" title="教育水平" data-val="2">
+                        </li>
+                        <li class="change">
+                            <label for="">毕业院校</label>
+                            <input type="text" name="graduate_institutions" value="毕业院校" title="毕业院校" data-val="2">
+                        </li>
+                        <li class="change">
+                            <label for="">手机号</label>
+                            <input type="text" name="aur_tel" value="手机号" title="手机号" data-val="2">
+                        </li>
+                    </ul>
+                    <div class="tools">
+                        <a href="javascript:;" class="subtn">修改</a>
+                        <a href="javascript:;" class="cancel">取消</a>
+                    </div>
+                </form>
+            </div>
+            <!-- 作品设置 -->
+            <div id="bookInfo" style="display: block;">
+                <div>
+                    <h3>作品设置 <span>/ 峡谷乱杀记</span></h3>
+                </div>
+                <form action="">
+                    <div>
+                        <label>作品封面</label>
+                        <div class="bookImgUpload">
+                            <div class="change">
+                                <img src="https://ccstatic-1252317822.image.myqcloud.com/bookcoverimg/2021-07-02/default_264ea1a27b7bebe66ed71374908e6de2.png?imageMogr2/thumbnail/150x200!" alt="">
+                                <label class="mask" for="bookUpload">
+                                    <i class="fa fa-upload"></i>
+                                    <span>上传封面</span>
+                                </label>
+                                <input id="bookUpload" type="file" style="display: none;" title="上传头像">
+                            </div>
+                            <div class="msg"></div>
+                        </div>
+                        
+                    </div>
+                    <ul>
+                        <li class="change">
+                            <label for="">作品名称</label>
+                            <input type="text" name="novel_name" value="1" title="作品名称" data-val="啊啊啊">
+                        </li>
+                        <li class="change">
+                            <label for="">作品类型</label>
+                            <input type="text" name="novel_type" value="作品类型" data-val="仙侠">
+                        </li>
+                        <li>
+                            <label for="">字数</label>
+                            <input type="text" name="word_Num" value="3021" title="字数">
+                        </li>
+                        <li>
+                            <label for="">收藏</label>
+                            <input type="text" name="subscribe_Num" value="102" title="收藏">
+                        </li>
+                        <li>
+                            <label for="">连载状态</label>
+                            <input type="text" name="progress" value="连载" title="连载状态" data-val="连载">
+                        </li>
+                        <li class="change">
+                            <label for="">属性</label>
+                            <select name="novel_attr">
+                                <option value="">请选择属性</option>
+                                <option value="VIP">VIP</option>
+                                <option value="免费">免费</option>
+                            </select>
+                        </li>
+                        <li class="change">
+                            <label for="">标签</label>
+                            <select name="novel_label">
+                                <option value="">请选择标签</option>
+                                <option value="医生">医生</option>
+                                <option value="都市">都市</option>
+                                <option value="种田">种田</option>
+                            </select>
+                        </li>
+                        <li class="change">
+                            <label for="">作品介绍</label>
+                            <textarea name="novel_intro" title="作品介绍" cols="" rows=""></textarea>
+                        </li>
+                    </ul>
+                    <div class="tools">
+                        <a href="javascript:;" class="subtn">修改</a>
+                        <a href="javascript:;" class="cancel">取消</a>
+                    </div>
+                </form>
+            </div>
+            <!-- 新建作品 -->
+            <div id="addNovel" style="display: none;">
+                <div>
+                    <h3>新建作品</h3>
+                </div>
+                <form action="">
+                    <ul>
+                        <li>
+                            <label for="">作品名称</label>
+                            <input type="text" name="novel_name" value="" title="作品名称">
+                        </li>
+                        <li>
+                            <label for="">作品类型</label>
+                            <select name="novel_type">
+                                <option value="">请选择类型</option>
+                                <option value="玄幻">玄幻</option>
+                                <option value="都市">都市</option>
+                                <option value="仙侠">仙侠</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="">属性</label>
+                            <select name="novel_attr">
+                                <option value="">请选择属性</option>
+                                <option value="VIP">VIP</option>
+                                <option value="免费">免费</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="">标签</label>
+                            <select name="novel_label">
+                                <option value="">请选择标签</option>
+                                <option value="医生">医生</option>
+                                <option value="都市">都市</option>
+                                <option value="种田">种田</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="">作品介绍</label>
+                            <textarea name="novel_intro" id="" title="作品介绍" cols="" rows=""></textarea>
+                        </li>
+                    </ul>
+                    <div class="tools">
+                        <a href="javascript:;" class="subtn">新建作品</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="flex-center">
+        <div class="flex-center">
+            <p>
+                作者专区
+            </p>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- form 提交 -->
+    <script>
+        function bookDataSub() {
+            let mask=document.querySelector('#bookInfo .mask');
+            let form=document.querySelector('#bookInfo form');
+            // 按钮
+            let subtn=document.querySelector('#bookInfo .subtn');
+            let cancel=document.querySelector('#bookInfo .cancel');
+            // 输入框
+            let inputs=document.querySelectorAll('#bookInfo form input');
+            let changeInput=document.querySelectorAll('#bookInfo form .change input');
+
+            let img=document.querySelector('#bookInfo .bookImgUpload img');
+            let fileList=document.querySelector('#bookInfo #bookUpload');
+            let msg=document.querySelector('#bookInfo .msg');
+            // 单选框
+            let radio=document.querySelectorAll('#bookInfo input[type="radio"]');
+            // radio.forEach(el=>{
+            //     console.log(el)
+            // })
+            
+            // console.log(fileList)
+            //console.log(img)
+            //初始禁用
+            inputs.forEach((el,i)=>{
+                el.setAttribute("disabled","");
+            })
+            //不允许选择图片
+            mask.style.display='none';
+            EditInfo();
+            changeInput.forEach(el=>{
+                //if(el.nodeType)
+                el.addEventListener('focus',e=>{
+                    if(el.getAttribute('name')!='sex'){
+                        el.value='';
+                        console.log(el)
+                    }
+                    
+                })
+                el.addEventListener('blur',e=>{
+                    if(el.getAttribute('name')!='sex'){
+                        if(el.value.trim()==''){
+                            el.value=el.getAttribute('data-val');
+                        }
+                    }
+                    
+                })
+            })
+            //点击修改
+            function EditInfo(){
+                subtn.addEventListener('click',e=>{
+                    if(subtn.innerHTML=="修改"){
+                        changeInput.forEach((el,i)=>{
+                            el.removeAttribute('disabled');
+                        })
+                        mask.style.display="flex";
+                        subtn.innerHTML="保存";
+                        cancel.style.display="block";
+                        
+                    }else{
+                        if(subtn.innerHTML=="保存"){
+                            SubmitInfo();
+                        }
+                        msg.innerHTML="";
+                    }
+                })
+                //取消
+                cancel.addEventListener('click',e=>{
+                    subtn.innerHTML="修改";
+                    changeInput.forEach((el,i)=>{
+                        el.setAttribute("disabled","");
+                        el.value=el.getAttribute('value');
+                    })
+                    cancel.style.display="none";
+                    mask.style.display="none";
+                    img.setAttribute('src',img.getAttribute('data-url'));
+                    msg.innerHTML="";
+                })
+            }
+            //图片预览
+            fileList.addEventListener('change',e=>{
+                if(fileList.files.length>0){
+                    console.log(fileList.files[0].name)
+                    let fileReader =new FileReader();
+                    fileReader.readAsDataURL(fileList.files[0]);
+                    fileReader.addEventListener('load',function(){
+                        img.setAttribute('src',fileReader.result);
+                        msg.innerHTML="*图片预览";
+                    })
+                }
+            })
+            //数据提交
+            async function SubmitInfo(){
+                let formData = new FormData(form);
+                formData.forEach((val, key) => {
+                    console.log(val)
+                })
+                formData.append('file',fileList.files[0]);
+                console.log(fileList.files[0])
+                formData.append('novel_id', 6);
+                let data=await postCon('https://localhost:44303/Author/UpdateNovel',formData);
+                // console.log(data)
+                if(data.state){
+                    // console.log(data)
+                    alert(data.message);
+                    //location.reload();
+                }else{
+                    alert("保存失败");
+                }
+            }
+            //post传数据
+            function postCon(url, params) {
+                return new Promise((resolve, reject) => {
+                    axios.post(url, params).then((res) => {
+                        resolve(res.data);
+                    }).catch((err) => {
+                        reject(err);
+                    })
+                })
+            }
+    
+        }
+        bookDataSub()
+        function UserDataSub() {
+            let mask=document.querySelector('#userInfo .mask');
+            let form=document.querySelector('#userInfo form');
+            // 按钮
+            let subtn=document.querySelector('#userInfo .subtn');
+            let cancel=document.querySelector('#userInfo .cancel');
+            // 输入框
+            let inputs=document.querySelectorAll('#userInfo form input');
+            let changeInput=document.querySelectorAll('#userInfo form .change input');
+
+            let img=document.querySelector('#userInfo .userImgUpload img');
+            let fileList=document.querySelector('#userInfo #userUpload');
+            let msg=document.querySelector('#userInfo .msg');
+            // 单选框
+            let radio=document.querySelectorAll('#bookInfo input[type="radio"]');
+            // radio.forEach(el=>{
+            //     console.log(el)
+            // })
+            
+            // console.log(fileList)
+            //console.log(img)
+            //初始禁用
+            inputs.forEach((el,i)=>{
+                el.setAttribute("disabled","");
+            })
+            //不允许选择图片
+            mask.style.display='none';
+            EditInfo();
+            changeInput.forEach(el=>{
+                //if(el.nodeType)
+                el.addEventListener('focus',e=>{
+                    if(el.getAttribute('name')!='sex'){
+                        el.value='';
+                        console.log(el)
+                    }
+                    
+                })
+                el.addEventListener('blur',e=>{
+                    if(el.getAttribute('name')!='sex'){
+                        if(el.value.trim()==''){
+                            el.value=el.getAttribute('data-val');
+                        }
+                    }
+                    
+                })
+            })
+            //点击修改
+            function EditInfo(){
+                subtn.addEventListener('click',e=>{
+                    if(subtn.innerHTML=="修改"){
+                        changeInput.forEach((el,i)=>{
+                            el.removeAttribute('disabled');
+                        })
+                        mask.style.display="flex";
+                        subtn.innerHTML="保存";
+                        cancel.style.display="block";
+                        
+                    }else{
+                        if(subtn.innerHTML=="保存"){
+                            SubmitInfo();
+                        }
+                        msg.innerHTML="";
+                    }
+                })
+                //取消
+                cancel.addEventListener('click',e=>{
+                    subtn.innerHTML="修改";
+                    changeInput.forEach((el,i)=>{
+                        el.setAttribute("disabled","");
+                        el.value=el.getAttribute('value');
+                    })
+                    cancel.style.display="none";
+                    mask.style.display="none";
+                    img.setAttribute('src',img.getAttribute('data-url'));
+                    msg.innerHTML="";
+                })
+            }
+            //图片预览
+            fileList.addEventListener('change',e=>{
+                if(fileList.files.length>0){
+                    console.log(fileList.files[0].name)
+                    let fileReader =new FileReader();
+                    fileReader.readAsDataURL(fileList.files[0]);
+                    fileReader.addEventListener('load',function(){
+                        img.setAttribute('src',fileReader.result);
+                        msg.innerHTML="*图片预览";
+                    })
+                }
+            })
+            //数据提交
+            async function SubmitInfo(){
+                let formData = new FormData(form);
+                formData.append('file',fileList.files[0]);
+                console.log(fileList.files[0])
+                console.log(formData);
+                // let data=await postCon('https://localhost:44303/Author/UpdateAuthor',formData);
+                // console.log(data)
+                // if(data.state){
+                //     console.log(data)
+                //     //location.reload();
+                // }else{
+                //     alert("保存失败");
+                // }
+            }
+            //post传数据
+            function postCon(url, params) {
+                return new Promise((resolve, reject) => {
+                    axios.post(url, params).then((res) => {
+                        resolve(res.data);
+                    }).catch((err) => {
+                        reject(err);
+                    })
+                })
+            }
+    
+        }
+        UserDataSub()
+    </script>
+    <!-- 切换效果 -->
+    <script>
+        var fromurl = document.referrer;
+        let url=new URL(document.URL);
+        // console.log(url)
+        let asets=document.querySelectorAll(".aside>a");
+        let arr=url.pathname.split('/');
+        // console.log(arr);
+        asets.forEach(e=>{//
+            if(arr.length>3 && arr[3]==e.getAttribute('data-id')){
+                e.classList.add('active');
+            }else if(arr[2]==e.getAttribute('data-id')){
+                e.classList.add('active');
+            }
+        })
+        
+    </script>
+    <!-- 新建作品 -->
+    <script>
+        let form = document.querySelector('#addNovel form');
+        let subtn = document.querySelector('#addNovel form .tools a');
+        subtn.addEventListener('click', function() {
+            SubmitInfo();
+        })
+        //数据提交
+        async function SubmitInfo(){
+            let formData = new FormData(form);
+            let data = await postCon('https://localhost:44303/Author/AddNovel',formData);
+            
+            if(data.state){
+                console.log(data)
+                alert(data.message);
+                location.href = '/Author/NovelManage';
+            }else{
+                alert("保存失败");
+            }
+        }
+        function postCon(url, params) {
+            return new Promise((resolve, reject) => {
+                axios.post(url, params).then((res) => {
+                    resolve(res.data);
+                }).catch((err) => {
+                    reject(err);
+                })
+            })
+        }
+        
+    </script>
+</body>
+</html>

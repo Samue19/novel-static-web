@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+		<style>
+			#header{
+				height: 64px;
+				z-index: 9999;
+			}
+			#right-nav{
+				height: 40px;
+			}
+			#left-menu{
+				position: fixed;
+				top:64px;
+				left:0;
+				bottom: 0;
+				z-index: 1030;
+			}
+			#right-content{
+				position: relative;
+				top:104px;
+				left:16.7%;
+			}
+			#right-nav{
+				position: fixed;
+				z-index: 1030;
+				top:64px;
+				width: 83.3%;
+			}
+			label {
+				cursor: pointer;
+				width: 14px;
+				height: 14px;
+				background: transparent;
+				border: 1px solid #979797;
+				margin-bottom: 0;
+			}
+			
+			label:after {
+				opacity: 0;
+				content: '';
+				width: 9px;
+				height: 5px;
+				background: transparent;
+				position: absolute;
+				top: 6px;
+				left: 3px;
+				border: 2px solid #575CFF;
+				transform: rotate(-45deg);
+			}
+			
+			input[type="checkbox"]:checked+label:after {
+				opacity: 1;
+				border-top: none;
+				border-right: none;
+			}
+			
+			input[type="checkbox"] {
+				display: none;
+			}
+		</style>
+	</head>
+	<body onload="draw();">
+		<!-- ManagementHeader -->
+		<div id="header" class="row bg-dark mx-0 fixed-top">
+			<!-- logo -->
+			<div class="col-2 px-0" id="logo">
+				<a href="" class="d-block align-items-center text-decoration-none bg-primary" style="opacity: 0.9;">
+					<img src="image/你的名字.jpg" alt="" class="mr-3" style="height: 64px;">
+					<span class="d-inline-block text-center text-white">青草小说</span>
+				</a>
+			</div>
+			<!-- Content -->
+			<div class="col-10 bg-primary" id="content">
+				<div class="row">
+					<!-- menu-left -->
+					<div class="col-3 d-flex align-items-center py-0" style="height: 64px;">
+						<ul class="nav mr-auto">
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<i class="fa fa-indent fa-fw text-white"></i>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<span class="d-block text-white text-center">后台管理</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- menu-right -->
+					<div class="col-9 d-flex align-items-center" style="height: 64px;">
+						<ul class="nav ml-auto">
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<i class="fa fa-trash-o fa-fw text-white" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<i class="fa fa-arrows-alt fa-fw text-white" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<i class="fa fa-bell fa-fw text-white" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle text-white" data-toggle="dropdown" data-offset="0,10">管理员</a>
+								<div class="dropdown-menu">
+									<a href="#" class="dropdown-item">基本资料</a>
+									<a href="#" class="dropdown-item">修改密码</a>
+									<hr />
+									<a href="#" class="dropdown-item">退出登录</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<i class="fa fa-ellipsis-v text-white"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ManagemeBody -->
+		<div id="" class="row mx-0">
+			<!-- left-menu -->
+			<div id="left-menu" class="col-md-2 h-100 fixed">
+				<div id="menu" class="row bg-dark">
+					<div class="list-group w-100 text-white">
+						<div class="list-group-item bg-dark">
+							<div class="d-flex justify-content-between align-items-center px-2" data-toggle="collapse" data-target="#one">
+								<i class="fa fa-align-justify" aria-hidden="true"></i>
+								<span>管理小说</span>
+								<i class="fa fa-angle-down" aria-hidden="true"></i>
+							</div>
+							<div id="one" class="collapse" data-parent="#menu">
+								<div class="">1</div>
+								<div class="">2</div>
+								<div class="">3</div>
+							</div>
+						</div>
+						<div class="list-group-item bg-dark">
+							<div class="d-flex justify-content-between align-items-center px-2" data-toggle="collapse" data-target="#two">
+								<i class="fa fa-align-justify" aria-hidden="true"></i>
+								<span>管理用户</span>
+								<i class="fa fa-angle-down" aria-hidden="true"></i>
+							</div>
+							<div id="two" class="collapse" data-parent="#menu">
+								<div class="">1</div>
+								<div class="">2</div>
+								<div class="">3</div>
+							</div>
+						</div>
+						<div class="list-group-item bg-dark">
+							<div class="d-flex justify-content-between align-items-center px-2" data-toggle="collapse" data-target="#three">
+								<i class="fa fa-align-justify" aria-hidden="true"></i>
+								<span>管理评论</span>
+								<i class="fa fa-angle-down" aria-hidden="true"></i>
+							</div>
+							<div id="three" class="collapse" data-parent="#menu">
+								<div class="">1</div>
+								<div class="">2</div>
+								<div class="">3</div>
+							</div>
+						</div>
+						<div class="list-group-item bg-dark">
+							<div class="d-flex justify-content-between align-items-center px-2" data-toggle="collapse" data-target="#four">
+								<i class="fa fa-align-justify" aria-hidden="true"></i>
+								<span>管理小说</span>
+								<i class="fa fa-angle-down" aria-hidden="true"></i>
+							</div>
+							<div id="four" class="collapse" data-parent="#menu">
+								<div class="">1</div>
+								<div class="">2</div>
+								<div class="">3</div>
+							</div>
+						</div>
+						<div class="list-group-item bg-dark">
+							<div class="d-flex justify-content-between align-items-center px-2" data-toggle="collapse" data-target="#five">
+								<i class="fa fa-align-justify" aria-hidden="true"></i>
+								<span>管理小说</span>
+								<i class="fa fa-angle-down" aria-hidden="true"></i>
+							</div>
+							<div id="five" class="collapse" data-parent="#menu">
+								<div class="">1</div>
+								<div class="">2</div>
+								<div class="">3</div>
+							</div>
+						</div>
+						<div class="list-group-item bg-dark">
+							<div class="d-flex justify-content-between align-items-center px-2" data-toggle="collapse" data-target="#six">
+								<i class="fa fa-align-justify" aria-hidden="true"></i>
+								<span>管理小说</span>
+								<i class="fa fa-angle-down" aria-hidden="true"></i>
+							</div>
+							<div id="six" class="collapse" data-parent="#menu">
+								<div class="">1</div>
+								<div class="">2</div>
+								<div class="">3</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row bg-dark h-100"></div>
+			</div>
+			<!-- right-content -->
+			<div id="right-content" class="col-md-10">
+				<div id="right-nav" class="row bg-white">
+					<!-- nav-left -->
+					<div class="col-2 d-flex align-items-center px-0">
+						<ul class="nav">
+							<li class="nav-item border-right border-light">
+								<a href="" class="nav-link px-3">
+									<i class="fa fa-angle-left fa-2x text-black-50" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li class="nav-item border-right border-light">
+								<a href="" class="nav-link text-black-50">
+									首页
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- nav-right -->
+					<div class="col-10 px-0">
+						<ul class="nav">
+							<li class="nav-item ml-auto border-left border-light">
+								<a href="" class="nav-link">
+									<i class="fa fa-angle-left fa-rotate-180 fa-2x text-black-50" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li class="nav-item dropdown border-left border-light">
+								<a href="" class="nav-link" data-toggle="dropdown" data-offset="-100,0">
+									<i class="fa fa-angle-left fa-rotate-270 fa-2x text-black-50" aria-hidden="true"></i>
+								</a>
+								<div class="dropdown-menu">
+									<a href="#" class="dropdown-item">刷新当前</a>
+									<a href="#" class="dropdown-item">关闭当前</a>
+									<a href="#" class="dropdown-item">关闭全部</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row p-2 bg-light">
+					<div class="w-100 p-2 bg-white">
+						<div id="tab-box" class="w-100 p-2 bg-light">
+							<!-- tab-tool -->
+							<div class="w-100 py-2">
+								<div class="w-100 clearfix">
+									<div class="float-left">
+										<button id="add" class="btn btn-success">
+											<i class="fa fa-plus"></i>
+											新建
+										</button>
+										<button id="edit" class="btn btn-warning">
+											<i class="fa fa-edit"></i>
+											修改
+										</button>
+										<button id="delete" class="btn btn-danger">
+											<i class="fa fa-trash-o"></i>
+											删除
+										</button>
+										<button id="watch" class="btn btn-info">
+											<i class="fa fa-info-circle"></i>
+											查看
+										</button>
+									</div>
+									<div class="d-flex justify-content-end">
+										<div class="border border-dark-50 text-center p-1 mr-2">
+											<i class="fa fa-filter fa-fw" title="过滤"></i>
+										</div>
+										<div class="border border-dark-50 text-center p-1">
+											<i class="fa fa-search fa-fw" title="搜索"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="w-100">
+								<div class="w-100 pr-3">
+									<table class="table my-0">
+										<thead class="border-bottom-0">
+											<tr class="">
+												<th style="width: 10%;">
+													<div class="position-relative d-inline-block">
+														<input type="checkbox" id="point1">
+														<label for="point1"></label>
+													</div>
+												</th>
+												<th style="width: 10%;">序号</th>
+												<th style="width: 10%;">小说名</th>
+												<th style="width: 10%;">作者</th>
+												<th style="width: 10%;">类别</th>
+												<th style="width: 10%;">订阅</th>
+												<th style="width: 10%;">章节数</th>
+												<th style="width: 10%;">进度</th>
+												<th style="width: 10%;">会员免费</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<div class="w-100" style="height: 300px;overflow:auto;">
+									<table class="table my-0">
+										<tbody class="bg-white">
+											<tr>
+												<td style="width: 10%;">
+													<div class="position-relative d-inline-block">
+														<input type="checkbox" id="point1">
+														<label for="point1"></label>
+													</div>
+												</td>
+												<td style="width: 10%;">1</td>
+												<td style="width: 10%;">龙族1·火之晨曦</td>
+												<td style="width: 10%;">江南</td>
+												<td style="width: 10%;">玄幻小说</td>
+												<td style="width: 10%;">92341</td>
+												<td style="width: 10%;">13</td>
+												<td style="width: 10%;">已完结</td>
+												<td style="width: 10%;">是</td>
+											</tr>
+											<tr>
+												<td style="width: 10%;">
+													<div class="position-relative d-inline-block">
+														<input type="checkbox" id="point1">
+														<label for="point1"></label>
+													</div>
+												</td>
+												<td style="width: 10%;">1</td>
+												<td style="width: 10%;">龙族1·火之晨曦</td>
+												<td style="width: 10%;">江南</td>
+												<td style="width: 10%;">玄幻小说</td>
+												<td style="width: 10%;">92341</td>
+												<td style="width: 10%;">13</td>
+												<td style="width: 10%;">已完结</td>
+												<td style="width: 10%;">是</td>
+											</tr>
+											<tr>
+												<td style="width: 10%;">
+													<div class="position-relative d-inline-block">
+														<input type="checkbox" id="point1">
+														<label for="point1"></label>
+													</div>
+												</td>
+												<td style="width: 10%;">1</td>
+												<td style="width: 10%;">龙族1·火之晨曦</td>
+												<td style="width: 10%;">江南</td>
+												<td style="width: 10%;">玄幻小说</td>
+												<td style="width: 10%;">92341</td>
+												<td style="width: 10%;">13</td>
+												<td style="width: 10%;">已完结</td>
+												<td style="width: 10%;">是</td>
+											</tr>
+											<tr>
+												<td style="width: 10%;">
+													<div class="position-relative d-inline-block">
+														<input type="checkbox" id="point1">
+														<label for="point1"></label>
+													</div>
+												</td>
+												<td style="width: 10%;">1</td>
+												<td style="width: 10%;">龙族1·火之晨曦</td>
+												<td style="width: 10%;">江南</td>
+												<td style="width: 10%;">玄幻小说</td>
+												<td style="width: 10%;">92341</td>
+												<td style="width: 10%;">13</td>
+												<td style="width: 10%;">已完结</td>
+												<td style="width: 10%;">是</td>
+											</tr>
+											<tr>
+												<td style="width: 10%;">
+													<div class="position-relative d-inline-block">
+														<input type="checkbox" id="point1">
+														<label for="point1"></label>
+													</div>
+												</td>
+												<td style="width: 10%;">1</td>
+												<td style="width: 10%;">龙族1·火之晨曦</td>
+												<td style="width: 10%;">江南</td>
+												<td style="width: 10%;">玄幻小说</td>
+												<td style="width: 10%;">92341</td>
+												<td style="width: 10%;">13</td>
+												<td style="width: 10%;">已完结</td>
+												<td style="width: 10%;">是</td>
+											</tr>
+											<tr>
+												<td style="width: 10%;">
+													<div class="position-relative d-inline-block">
+														<input type="checkbox" id="point1">
+														<label for="point1"></label>
+													</div>
+												</td>
+												<td style="width: 10%;">1</td>
+												<td style="width: 10%;">龙族1·火之晨曦</td>
+												<td style="width: 10%;">江南</td>
+												<td style="width: 10%;">玄幻小说</td>
+												<td style="width: 10%;">92341</td>
+												<td style="width: 10%;">13</td>
+												<td style="width: 10%;">已完结</td>
+												<td style="width: 10%;">是</td>
+											</tr>
+											<tr>
+												<td style="width: 10%;">
+													<div class="position-relative d-inline-block">
+														<input type="checkbox" id="point1">
+														<label for="point1"></label>
+													</div>
+												</td>
+												<td style="width: 10%;">1</td>
+												<td style="width: 10%;">龙族1·火之晨曦</td>
+												<td style="width: 10%;">江南</td>
+												<td style="width: 10%;">玄幻小说</td>
+												<td style="width: 10%;">92341</td>
+												<td style="width: 10%;">13</td>
+												<td style="width: 10%;">已完结</td>
+												<td style="width: 10%;">是</td>
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- tab-page -->
+							<div class="p-2 border border-dark-50">
+								<div class="d-flex">
+									<span class="d-flex align-items-center">
+										到第
+										<input type="text" class="mx-2">
+										页
+										<a class="btn btn-outline-dark py-0 mx-2">确定</a>
+									</span>
+									<a href="" class="mx-2"> > </a> 
+									<a href="" class="mx-2">1</a>
+									<a href="" class="mx-2">2</a>
+									<a href="" class="mx-2">3</a>
+									<a href="" class="mx-2"> > </a>
+									<span class="d-inline-block mx-2">
+										<select>
+											<option value="">12</option>
+											<option value="">24</option>
+											<option value="">32</option>
+										</select>
+									</span>
+									<span class="d-inline-block">共 32 条</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./js/jquery/jquery-3.5.1.slim.min.js jquery-3.5.1.slim.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/bootstrap/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			function draw() {
+				var canvas = document.getElementById('canvas');
+				if (canvas.getContext) {
+					var ctx = canvas.getContext('2d');
+
+					ctx.beginPath();
+					ctx.arc(300, 300, 200, 0, Math.PI * 2, true); // 绘制
+					ctx.moveTo(450, 300);
+					ctx.arc(300, 300, 150, 0, Math.PI, false); // 口(顺时针)
+					ctx.moveTo(260, 260);
+					ctx.arc(240, 260, 20, 0, Math.PI * 2, true); // 左眼
+					ctx.moveTo(380, 260);
+					ctx.arc(360, 260, 20, 0, Math.PI * 2, true); // 右眼
+					ctx.stroke();
+				}
+			}
+		</script>
+	</body>
+</html>

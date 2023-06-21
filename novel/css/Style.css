@@ -1,0 +1,138 @@
+#header {
+	height: 140px;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #7babbf;
+}
+
+#types div{
+	display: none;
+}
+#types:hover div{
+	display: block;
+}
+#types a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+.breadcrumb-item+.breadcrumb-item:before {
+	display: inline-block;
+	padding-right: 0.5rem;
+	color: #6c757d;
+	content: ">";
+}
+
+label {
+	cursor: pointer;
+	width: 14px;
+	height: 14px;
+	background: transparent;
+	border: 1px solid #979797;
+	margin-bottom: 0;
+}
+
+label:after {
+	opacity: 0;
+	content: '';
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	position: absolute;
+	top: 6px;
+	left: 3px;
+	border: 2px solid #575CFF;
+	transform: rotate(-45deg);
+}
+
+input[type="checkbox"]:checked+label:after {
+	opacity: 1;
+	border-top: none;
+	border-right: none;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+#UL li a .media-body span:last-child {
+	display: block;
+}
+
+#UL li a .media-body span:first-child {
+	margin: 0 2rem;
+	display: inline-block;
+}
+
+#UL li a .media-body span {
+	display: none;
+}
+
+#UL li a img {
+	display: none;
+}
+
+#UL .on a .media-body span:last-child {
+	display: none;
+}
+
+#UL .on a .media-body span:first-child {
+	margin: 0.5rem 0 2.5rem 1rem;
+	display: inline-block;
+}
+
+#UL .on a .media-body span {
+	display: block;
+}
+
+#UL .on a img {
+	display: block;
+}
+
+/* 过度 */
+#Hide {
+	top: 136px;
+	position: absolute;
+	transition: top 0.5s ease-in-out 0s;
+	z-index: 99;
+	height: 164px;
+}
+
+#Float li div a:first-child:hover div #Hide {
+	top: 0px;
+	position: absolute;
+}
+
+#advise-news ul li span {
+	color: rgba(0, 0, 0, .3);
+}
+
+#advise-news ul {
+	font-size: 0.8em;
+}
+
+.breadcrumb-item+.breadcrumb-item:before {
+	display: inline-block;
+	padding-right: 0.5rem;
+	color: #6c757d;
+	content: ">";
+}
+#sear_box #sear_text:focus{
+	border: 1px solid #007BFF;
+	border-right: 0;
+}
+#sear_text{
+	border: 1px solid #ced4da;
+}
+#sear_list{
+	display: none;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+}

@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* header */
+header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
+}
+header .header-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    list-style: none;
+}
+header .header-left li{
+    display: block;
+    padding: 0px 10px;
+    position: relative;
+}
+header .header-left li:nth-child(2)::after{
+    content: "|";
+    position: absolute;
+    right: -4px;
+}
+header .header-left img{
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+header .header-right {
+    display: flex;
+}
+header .header-right a{
+    display: block;
+    height: 36px;
+    padding: 6px 16px;
+    border: solid 1px #bfbfbf;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+header .header-right a:last-child{
+    display: block;
+    border: solid 1px #eee;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: hsl(213, 85%, 60%);
+    color: #fff;
+}
+
+/* content */
+.content{
+    width: 100vw;
+    height: calc(100vh - 100px);
+    position: relative;
+    top: 60px;
+    display: flex;
+}
+
+.content .aside{
+    height: 100%;
+    width: 260px;
+    border-right: solid 1px #bfbfbf;
+    padding: 15px 26px;
+    display: flex;
+    flex-direction: column;
+}
+.content .aside .create{
+    width: 100%;
+    border-bottom: solid 1px #bfbfbf;
+    padding: 10px 0px;
+}
+
+.content .aside .chapter{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+.content .aside .chapter>div{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 6px 0px;
+    font-weight: 360;
+}
+.content .aside .chapter>div>div span{
+    color: #5d5d5d;
+    font-size: 13px;
+}
+.content .aside .chapter>div ul{
+    display: flex;
+    flex-direction: column;
+}
+.content .aside .chapter>div ul li{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 14px 0px;
+}
+.content .aside .chapter>div ul li.active .title{
+    color:hsl(213, 85%, 60%);
+}
+.content .aside .chapter>div ul .title{
+    font-size: 13px;
+    padding: 4px 0px 3px;
+}
+.content .aside .chapter>div ul .txt{
+    font-size: 8px;
+    color:#5d5d5d;
+}
+
+
+.content .writing{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 140px 0px 30px;
+}
+
+.content .writing .tools{
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.content .writing .tools ul{
+    display: flex;
+    align-items: center;
+    color: #5d5d5d;
+    height: 40px;
+}
+.content .writing .tools ul li{
+    display: block;
+    margin-right: 16px;
+}
+.content .writing .tools .write-time{
+    color: #bfbfbf;
+    display: flex;
+    align-items: center;
+}
+
+/* writing */
+.content .writing #chapter-body{
+    position: relative;
+    padding: 20px 40px 0px;
+    background-color: #fff;
+    height: calc(100vh - 140px);
+    width: calc(100vw - 510px);
+}
+.content .writing #chapter-body .write-top{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 20px;
+    left: 0px;
+    height: 40px;
+    z-index: 10;
+    width: 100%;
+    border-bottom: solid 1px #bfbfbf;
+}
+.content .writing #chapter-body .write-top input{
+    display: block;
+    height: 40px;
+    border: none;
+    border-bottom: solid 1px #bfbfbf;
+    line-height: 40px;
+    font-size: 20px;
+    color: #5d5d5d;
+    width: 100%;
+}
+.content .writing #chapter-body .write-top input:focus{
+    outline:none;
+}
+.content .writing #chapter-body .write-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 40px;
+    z-index: 10;
+    width: 100%;
+    border-top: solid 1px #bfbfbf;
+}
+
+/* 富文本 */
+.toolbar {
+    display: none;
+}
+.text {
+    border: 1px solid #ccc;
+    min-height: 400px;
+    height: calc(100vh - 180px);
+    border: solid 1px #ccc;
+    border-radius: 8px;
+    overflow: auto;
+    padding: 50px 0 0 0;
+    z-index: -1;
+    border: none;
+    /* position: absolute;
+    top: 60px;
+    bottom: 40px; */
+}
+
+/* footer */
+footer{
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: auto;
+    border-top: solid 1px #bfbfbf;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+footer>div{
+    height: 40px;
+    padding: 10px;
+    color:#5d5d5d;
+}
+footer>div span{
+    height: 40px;
+    padding: 10px;
+    color:black;
+}
+
+/* 背景颜色 */
+.skin-light {
+    background-color: #f5f6f7;
+    color: #1e1e1e;
+}
+.skin-primary {
+    background-color: #f2e9d5;
+    color: #1e1e1e;
+}
